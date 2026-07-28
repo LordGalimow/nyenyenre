@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korpus Balaton Massage | Prémium Masszázs Balatonfüred & Csopak</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        korpus: {
+                            dark: '#1e3329',
+                            DEFAULT: '#2f4f40',
+                            light: '#4a7c65',
+                            bg: '#fbf9f5',
+                            card: '#f4f0ea',
+                            accent: '#c5a880'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf9f5;
+            color: #2f4f40;
+        }
+        h1, h2, h3, .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+</head>
+<body class="bg-korpus-bg text-korpus antialiased selection:bg-korpus-accent selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-korpus-bg/90 backdrop-blur-md border-b border-korpus/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-korpus text-white flex items-center justify-center font-serif text-xl shadow-md group-hover:bg-korpus-light transition">
+                    K
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-bold tracking-wide">Korpus Balaton</span>
+                    <span class="text-[10px] tracking-widest uppercase text-korpus-light -mt-1">Massage & Therapy</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu & Language Switcher -->
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex items-center gap-6 font-medium text-sm tracking-wide">
+                    <a href="#about" data-i18n="nav_about" class="hover:text-korpus-accent transition">Rólunk</a>
+                    <a href="#services" data-i18n="nav_services" class="hover:text-korpus-accent transition">Szolgáltatások & Árak</a>
+                    <a href="#contact" data-i18n="nav_contact" class="hover:text-korpus-accent transition">Kapcsolat</a>
+                </nav>
+
+                <!-- Language Switcher -->
+                <div class="flex items-center bg-korpus-card border border-korpus/10 rounded-full p-1 text-xs font-semibold">
+                    <button onclick="setLanguage('hu')" id="btn-hu" class="px-3 py-1.5 rounded-full transition bg-korpus text-white shadow-sm">HU</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark">EN</button>
+                    <button onclick="setLanguage('de')" id="btn-de" class="px-3 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark">DE</button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center md:hidden gap-4">
+                <div class="flex items-center bg-korpus-card border border-korpus/10 rounded-full p-0.5 text-[10px] font-semibold">
+                    <button onclick="setLanguage('hu')" id="mob-btn-hu" class="px-2 py-1 rounded-full bg-korpus text-white">HU</button>
+                    <button onclick="setLanguage('en')" id="mob-btn-en" class="px-2 py-1 rounded-full text-korpus">EN</button>
+                    <button onclick="setLanguage('de')" id="mob-btn-de" class="px-2 py-1 rounded-full text-korpus">DE</button>
+                </div>
+                <button onclick="toggleMobileMenu()" class="text-korpus text-2xl focus:outline-none">
+                    <i id="menu-icon" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-korpus-bg border-b border-korpus/10 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about" class="block font-medium text-lg">Rólunk</a>
+            <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav_services" class="block font-medium text-lg">Szolgáltatások & Árak</a>
+            <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_contact" class="block font-medium text-lg">Kapcsolat</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 md:pt-44 md:pb-32 px-6 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-korpus-card border border-korpus/10 text-xs font-semibold tracking-widest uppercase text-korpus-light animate-pulse">
+                <i class="fa-solid fa-spa text-korpus-accent"></i> <span data-i18n="hero_badge">Prémium Wellness & Rehabilitáció</span>
+            </div>
+            
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                Korpus Balaton Massage
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-korpus/80 font-light max-w-3xl mx-auto leading-relaxed" data-i18n="hero_subtitle">
+                Masszázs ingyenes parkolással Balatonfüreden, vagy Csopakon a Lélekpart Stúdióban, a parton.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full bg-korpus text-white font-medium shadow-lg hover:bg-korpus-light transition flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check text-korpus-accent"></i> <span data-i18n="cta_book">Bejelentkezés</span>
+                </a>
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full bg-korpus-card border border-korpus/20 font-medium hover:bg-korpus/5 transition flex items-center justify-center gap-3">
+                    <span data-i18n="cta_prices">Árak megtekintése</span> <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION (Dióhéjban) -->
+    <section id="about" class="py-20 bg-korpus-card/50 border-y border-korpus/10 px-6">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="text-center space-y-3">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold" data-i18n="about_title">Dióhéjban</h2>
+                <div class="w-16 h-0.5 bg-korpus-accent mx-auto"></div>
+            </div>
+
+            <div class="space-y-6 text-lg text-korpus/90 leading-relaxed font-light">
+                <p>
+                    <strong class="font-semibold text-korpus" data-i18n="about_p1_strong">A Korpus Balaton Massage alapítója Klemens Ádám</strong> <span data-i18n="about_p1">rehabilitációs terapeuta, gyógymasszőr. Több mint 20 éve foglalkozik az emberi szervezet teljességének fizikális, lelki és szellemi támogatásával.</span>
+                </p>
+                <p data-i18n="about_p2">
+                    A Korpus Balaton Massage egyéni konzultációt és professzionális masszázs kezeléseket ajánl a Balaton északi partján, Balatonfüreden és Csopakon.
+                </p>
+                <p data-i18n="about_p3">
+                    A felborult testi egyensúly visszaállítására, stressz elengedésére, fizikális felépülés támogatására, fájdalom kezelésére, csökkentésére, ülőmunka, állómunka okozta terhelések felszabadítására, tökéletes megoldás. A kezelések a páciensek egyedi igényeire szabottak.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES & PRICES SECTION -->
+    <section id="services" class="py-24 px-6 max-w-5xl mx-auto space-y-16">
+        <div class="text-center space-y-3">
+            <h2 class="font-serif text-3xl md:text-5xl font-bold" data-i18n="services_title">Szolgáltatásaink és bruttó áraink</h2>
+            <div class="w-16 h-0.5 bg-korpus-accent mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-1 gap-6 max-w-3xl mx-auto">
+            <!-- Service Item 1 -->
+            <div class="bg-korpus-card p-6 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-korpus-light" data-i18n="service_1_time">25 perc</span>
+                    <h3 class="font-serif text-xl font-bold" data-i18n="service_1_name">Hátmasszázs</h3>
+                </div>
+                <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-5 py-2 rounded-xl border border-korpus/10">
+                    8.500,- Ft
+                </div>
+            </div>
+
+            <!-- Service Item 2 -->
+            <div class="bg-korpus-card p-6 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-korpus-light" data-i18n="service_2_time">50 perc</span>
+                    <h3 class="font-serif text-xl font-bold" data-i18n="service_2_name">Hát, vállöv, és nyak Svédmasszázs</h3>
+                </div>
+                <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-5 py-2 rounded-xl border border-korpus/10">
+                    14.500,- Ft
+                </div>
+            </div>
+
+            <!-- Service Item 3 -->
+            <div class="bg-korpus-card p-6 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-korpus-light" data-i18n="service_3_time">90 perc</span>
+                    <h3 class="font-serif text-xl font-bold" data-i18n="service_3_name">Teljes test masszázs</h3>
+                </div>
+                <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-5 py-2 rounded-xl border border-korpus/10">
+                    22.000,- Ft
+                </div>
+            </div>
+
+            <!-- Service Item 4 -->
+            <div class="bg-korpus-card p-6 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-korpus-light" data-i18n="service_4_time">25 perc</span>
+                    <h3 class="font-serif text-xl font-bold" data-i18n="service_4_name">Tömör konzultációval egybekötött, egy testtáj masszázsa</h3>
+                </div>
+                <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-5 py-2 rounded-xl border border-korpus/10">
+                    10.500,- Ft
+                </div>
+            </div>
+
+            <!-- Service Item 5 -->
+            <div class="bg-korpus-card p-6 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-korpus-light" data-i18n="service_5_time">50 perc</span>
+                    <h3 class="font-serif text-xl font-bold" data-i18n="service_5_name">Bővebb konzultációval egybekötött, érintett testtájak masszázsa</h3>
+                </div>
+                <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-5 py-2 rounded-xl border border-korpus/10">
+                    18.500,- Ft
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (Bejelentkezés) -->
+    <section id="contact" class="py-24 bg-korpus text-white px-6 relative">
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+            <div class="space-y-3">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold" data-i18n="contact_title">Bejelentkezés</h2>
+                <div class="w-16 h-0.5 bg-korpus-accent mx-auto"></div>
+                <p class="text-white/70 max-w-xl mx-auto pt-2" data-i18n="contact_subtitle">Kérjük, keressen minket bizalommal az alábbi elérhetőségeinken időpontfoglalásért.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 pt-4">
+                <!-- Phone -->
+                <a href="tel:+36701725509" class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition flex flex-col items-center gap-4 group">
+                    <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-white/60" data-i18n="contact_phone_label">Telefonszám</span>
+                    <span class="font-serif text-xl font-bold">+36 70 172 5509</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:bejelentkezeses@korpusbalaton.hu" class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition flex flex-col items-center gap-4 group">
+                    <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-white/60" data-i18n="contact_email_label">Email cím</span>
+                    <span class="font-medium text-sm break-all">bejelentkezeses@korpusbalaton.hu</span>
+                </a>
+
+                <!-- Web -->
+                <a href="https://www.korpusbalaton.hu" class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition flex flex-col items-center gap-4 group">
+                    <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-white/60" data-i18n="contact_web_label">Weboldal</span>
+                    <span class="font-medium text-sm">www.korpusbalaton.hu</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-korpus-dark text-white/60 text-center text-sm px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Korpus Balaton Massage. All rights reserved.</p>
+            <p class="text-xs text-white/40">Design & Architecture Premium</p>
+        </div>
+    </footer>
+
+    <!-- TRANSLATION SCRIPT -->
+    <script>
+        const translations = {
+            hu: {
+                nav_about: "Rólunk",
+                nav_services: "Szolgáltatások & Árak",
+                nav_contact: "Kapcsolat",
+                hero_badge: "Prémium Wellness & Rehabilitáció",
+                hero_subtitle: "Masszázs ingyenes parkolással Balatonfüreden, vagy Csopakon a Lélekpart Stúdióban, a parton.",
+                cta_book: "Bejelentkezés",
+                cta_prices: "Árak megtekintése",
+                about_title: "Dióhéjban",
+                about_p1_strong: "A Korpus Balaton Massage alapítója Klemens Ádám",
+                about_p1: "rehabilitációs terapeuta, gyógymasszőr. Több mint 20 éve foglalkozik az emberi szervezet teljességének fizikális, lelki és szellemi támogatásával.",
+                about_p2: "A Korpus Balaton Massage egyéni konzultációt és professzionális masszázs kezeléseket ajánl a Balaton északi partján, Balatonfüreden és Csopakon.",
+                about_p3: "A felborult testi egyensúly visszaállítására, stressz elengedésére, fizikális felépülés támogatására, fájdalom kezelésére, csökkentésére, ülőmunka, állómunka okozta terhelések felszabadítására, tökéletes megoldás. A kezelések a páciensek egyedi igényeire szabottak.",
+                services_title: "Szolgáltatásaink és bruttó áraink",
+                service_1_time: "25 perc",
+                service_1_name: "Hátmasszázs",
+                service_2_time: "50 perc",
+                service_2_name: "Hát, vállöv, és nyak Svédmasszázs",
+                service_3_time: "90 perc",
+                service_3_name: "Teljes test masszázs",
+                service_4_time: "25 perc",
+                service_4_name: "Tömör konzultációval egybekötött, egy testtáj masszázsa",
+                service_5_time: "50 perc",
+                service_5_name: "Bővebb konzultációval egybekötött, érintett testtájak masszázsa",
+                contact_title: "Bejelentkezés",
+                contact_subtitle: "Kérjük, keressen minket bizalommal az alábbi elérhetőségeinken időpontfoglalásért.",
+                contact_phone_label: "Telefonszám",
+                contact_email_label: "Email cím",
+                contact_web_label: "Weboldal"
+            },
+            en: {
+                nav_about: "About Us",
+                nav_services: "Services & Prices",
+                nav_contact: "Contact",
+                hero_badge: "Premium Wellness & Rehabilitation",
+                hero_subtitle: "Massage with free parking in Balatonfüred, or in Csopak at the Lélekpart Studio by the shore.",
+                cta_book: "Book Appointment",
+                cta_prices: "View Prices",
+                about_title: "In a Nutshell",
+                about_p1_strong: "The founder of Korpus Balaton Massage is Ádám Klemens",
+                about_p1: "rehabilitation therapist and medical massage therapist. For over 20 years, he has been dedicated to supporting the physical, mental, and spiritual wholeness of the human body.",
+                about_p2: "Korpus Balaton Massage offers individual consultations and professional massage treatments on the northern shore of Lake Balaton, in Balatonfüred and Csopak.",
+                about_p3: "It is the perfect solution for restoring disrupted body balance, releasing stress, supporting physical recovery, managing and reducing pain, and relieving strain caused by sedentary or standing work. Treatments are tailored to the individual needs of patients.",
+                services_title: "Our Services & Gross Prices",
+                service_1_time: "25 mins",
+                service_1_name: "Back Massage",
+                service_2_time: "50 mins",
+                service_2_name: "Back, Shoulder & Neck Swedish Massage",
+                service_3_time: "90 mins",
+                service_3_name: "Full Body Massage",
+                service_4_time: "25 mins",
+                service_4_name: "Single Body Area Massage combined with brief consultation",
+                service_5_time: "50 mins",
+                service_5_name: "Targeted Body Areas Massage combined with extended consultation",
+                contact_title: "Appointment Booking",
+                contact_subtitle: "Please feel free to contact us via the details below to book an appointment.",
+                contact_phone_label: "Phone Number",
+                contact_email_label: "Email Address",
+                contact_web_label: "Website"
+            },
+            de: {
+                nav_about: "Über uns",
+                nav_services: "Leistungen & Preise",
+                nav_contact: "Kontakt",
+                hero_badge: "Premium Wellness & Rehabilitation",
+                hero_subtitle: "Massage mit kostenlosen Parkplätzen in Balatonfüred oder in Csopak im Lélekpart Studio am Ufer.",
+                cta_book: "Termin vereinbaren",
+                cta_prices: "Preise ansehen",
+                about_title: "Auf einen Blick",
+                about_p1_strong: "Der Gründer von Korpus Balaton Massage ist Ádám Klemens",
+                about_p1: "Rehabilitationstherapeut und Heilmasseur. Seit über 20 Jahren widmet er sich der physischen, mentalen und seelischen Unterstützung der Ganzheit des menschlichen Körpers.",
+                about_p2: "Korpus Balaton Massage bietet individuelle Beratungen und professionelle Massagebehandlungen am Nordufer des Plattensees in Balatonfüred und Csopak an.",
+                about_p3: "Es ist die perfekte Lösung zur Wiederherstellung des gestörten Körpergleichgewichts, zum Stressabbau, zur Unterstützung der körperlichen Genesung, zur Schmerzbehandlung und -linderung sowie zur Entlastung bei Sitz- oder Steharbeit. Die Behandlungen werden auf die individuellen Bedürfnisse der Patienten zugeschnitten.",
+                services_title: "Unsere Leistungen & Bruttopreise",
+                service_1_time: "25 Min.",
+                service_1_name: "Rückenmassage",
+                service_2_time: "50 Min.",
+                service_2_name: "Rücken-, Schulter- und Nacken-Schwedische Massage",
+                service_3_time: "90 Min.",
+                service_3_name: "Ganzkörpermassage",
+                service_4_time: "25 Min.",
+                service_4_name: "Massage einer Körperregion kombiniert mit kurzer Beratung",
+                service_5_time: "50 Min.",
+                service_5_name: "Massage betroffener Körperregionen kombiniert mit ausführlicher Beratung",
+                contact_title: "Terminvereinbarung",
+                contact_subtitle: "Bitte kontaktieren Sie uns gerne über die folgenden Kontaktdaten, um einen Termin zu vereinbaren.",
+                contact_phone_label: "Telefonnummer",
+                contact_email_label: "E-Mail-Adresse",
+                contact_web_label: "Webseite"
+            }
+        };
+
+        function setLanguage(lang) {
+            // Update active states for desktop buttons
+            ['hu', 'en', 'de'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                const mobBtn = document.getElementById(`mob-btn-${l}`);
+                if (l === lang) {
+                    if(btn) { btn.className = "px-3 py-1.5 rounded-full transition bg-korpus text-white shadow-sm"; }
+                    if(mobBtn) { mobBtn.className = "px-2 py-1 rounded-full bg-korpus text-white"; }
+                } else {
+                    if(btn) { btn.className = "px-3 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark"; }
+                    if(mobBtn) { mobBtn.className = "px-2 py-1 rounded-full text-korpus"; }
+                }
+            });
+
+            // Apply translations
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.setAttribute('lang', lang);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = "fa-solid fa-bars";
+            } else {
+                icon.className = "fa-solid fa-xmark";
+            }
+        }
+    </script>
+</body>
+</html>
