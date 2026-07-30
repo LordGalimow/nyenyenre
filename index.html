@@ -17,7 +17,7 @@
                             light: '#2d4d3e',
                             bg: '#fbf9f5',
                             card: '#f4f0ea',
-                            accent: '#c5a059' // Elegánsabb, mélyebb prémium arany
+                            accent: '#c5a059' // Prémium arany tónus
                         }
                     }
                 }
@@ -251,25 +251,26 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION (Csak a lényeges, tiszta elérhetőségek) -->
+    <!-- CONTACT & BOOKING SECTION -->
     <section id="contact" class="py-28 bg-korpus text-white px-6 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:20px_20px]"></div>
-        <div class="max-w-3xl mx-auto text-center space-y-12 relative z-10">
+        <div class="max-w-4xl mx-auto text-center space-y-12 relative z-10">
             <div class="space-y-3">
                 <span class="text-xs uppercase tracking-[0.2em] text-korpus-accent font-bold" data-i18n="contact_tag">Időpontfoglalás</span>
                 <h2 class="font-serif text-4xl md:text-5xl font-bold" data-i18n="contact_title">Bejelentkezés</h2>
                 <div class="w-16 h-0.5 bg-korpus-accent mx-auto"></div>
-                <p class="text-white/80 max-w-xl mx-auto pt-2 font-light" data-i18n="contact_subtitle">Kérjük, keressen minket bizalommal az alábbi elérhetőségeinken időpontfoglalásért.</p>
+                <p class="text-white/80 max-w-xl mx-auto pt-2 font-light" data-i18n="contact_subtitle">Kérjük, keressen minket bizalommal az alábbi elérhetőségeinken vagy foglaljon online.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 pt-4 max-w-2xl mx-auto">
+            <!-- Elérhetőségek & Facebook gomb -->
+            <div class="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
                 <!-- Phone -->
                 <a href="tel:+36701725509" class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-korpus-accent/50 transition-all duration-300 flex flex-col items-center gap-4 group shadow-xl">
                     <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-phone"></i>
                     </div>
                     <span class="text-[10px] uppercase tracking-[0.2em] text-white/60 font-semibold" data-i18n="contact_phone_label">Telefonszám</span>
-                    <span class="font-serif text-xl font-bold tracking-wide">+36 70 172 5509</span>
+                    <span class="font-serif text-lg font-bold tracking-wide">+36 70 172 5509</span>
                 </a>
 
                 <!-- Email -->
@@ -280,6 +281,24 @@
                     <span class="text-[10px] uppercase tracking-[0.2em] text-white/60 font-semibold" data-i18n="contact_email_label">Email cím</span>
                     <span class="font-medium text-sm break-all">bejelentkezeses@korpusbalaton.hu</span>
                 </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/1EdszgX5GW/" target="_blank" rel="noopener noreferrer" class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-korpus-accent/50 transition-all duration-300 flex flex-col items-center gap-4 group shadow-xl">
+                    <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-white/60 font-semibold" data-i18n="contact_fb_label">Kövessen minket</span>
+                    <span class="font-medium text-sm" data-i18n="contact_fb_text">Facebook oldal</span>
+                </a>
+            </div>
+
+            <!-- IDŐPONTFOGLALÓ WIDGET HELYE (Ideglenes kódblokk, cserélhető a használt rendszertől függően - WordPress, Wix, Squarespace stb.) -->
+            <div class="mt-12 bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl max-w-2xl mx-auto text-center space-y-4 shadow-xl">
+                <h3 class="font-serif text-2xl font-bold text-korpus-accent" data-i18n="widget_title">Online Időpontfoglalás</h3>
+                <p class="text-sm text-white/70 font-light" data-i18n="widget_desc">Ide illessze be az Ön által használt időpontfoglaló rendszer (pl. Salonic, Merlin, Google Calendar stb.) beágyazási kódját (iframe vagy script):</p>
+                <div class="p-4 bg-korpus-dark/60 rounded-xl border border-white/10 text-xs font-mono text-korpus-accent/80 select-all">
+                    &lt;!-- Ide illessze be a foglalási widget kódját --&gt;
+                </div>
             </div>
         </div>
     </section>
@@ -327,9 +346,13 @@
                 gallery_title: "Stúdióink & Pillanatok",
                 contact_tag: "Időpontfoglalás",
                 contact_title: "Bejelentkezés",
-                contact_subtitle: "Kérjük, keressen minket bizalommal az alábbi elérhetőségeinken időpontfoglalásért.",
+                contact_subtitle: "Kérjük, keressen minket bizalommal az alábbi elérhetőségeinken vagy foglaljon online.",
                 contact_phone_label: "Telefonszám",
-                contact_email_label: "Email cím"
+                contact_email_label: "Email cím",
+                contact_fb_label: "Kövessen minket",
+                contact_fb_text: "Facebook oldal",
+                widget_title: "Online Időpontfoglalás",
+                widget_desc: "Ide illessze be az Ön által használt időpontfoglaló rendszer (pl. Salonic, Merlin, Google Calendar stb.) beágyazási kódját (iframe vagy script):"
             },
             en: {
                 nav_about: "About Us",
@@ -363,9 +386,13 @@
                 gallery_title: "Our Studio & Moments",
                 contact_tag: "Reservation",
                 contact_title: "Appointment Booking",
-                contact_subtitle: "Please feel free to contact us via the details below to book an appointment.",
+                contact_subtitle: "Please feel free to contact us via the details below or book online.",
                 contact_phone_label: "Phone Number",
-                contact_email_label: "Email Address"
+                contact_email_label: "Email Address",
+                contact_fb_label: "Follow Us",
+                contact_fb_text: "Facebook Page",
+                widget_title: "Online Appointment Booking",
+                widget_desc: "Paste your booking system's embed code here:"
             },
             de: {
                 nav_about: "Über uns",
@@ -399,9 +426,13 @@
                 gallery_title: "Unsere Studios & Momente",
                 contact_tag: "Reservierung",
                 contact_title: "Terminvereinbarung",
-                contact_subtitle: "Bitte kontaktieren Sie uns gerne über die folgenden Kontaktdaten, um einen Termin zu vereinbaren.",
+                contact_subtitle: "Bitte kontaktieren Sie uns gerne über die folgenden Kontaktdaten oder buchen Sie online.",
                 contact_phone_label: "Telefonnummer",
-                contact_email_label: "E-Mail-Adresse"
+                contact_email_label: "E-Mail-Adresse",
+                contact_fb_label: "Folgen Sie uns",
+                contact_fb_text: "Facebook-Seite",
+                widget_title: "Online-Terminvereinbarung",
+                widget_desc: "Fügen Sie hier den Einbettungscode Ihres Buchungssystems ein:"
             }
         };
 
