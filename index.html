@@ -51,7 +51,7 @@
             background-size: cover;
             background-position: center;
         }
-        /* Egyedi, stílusos görgetősáv az egész oldalon és a modalon belül is */
+        /* Egyedi, stílusos görgetősáv */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -373,7 +373,7 @@
         </div>
     </section>
 
-    <!-- FULLSCREEN MODAL / FELUGRÓ ABLAK A MINUP FOGLALÁSHOZ (STÍLUSOS EGYEDI GÖRGETÉSSEL) -->
+    <!-- FULLSCREEN MODAL / FELUGRÓ ABLAK A MINUP FOGLALÁSHOZ -->
     <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-korpus-dark/90 backdrop-blur-xl flex items-center justify-center p-2 sm:p-6 overflow-hidden">
         <div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col relative h-[92vh] border border-korpus-accent/30 animate-in fade-in zoom-in duration-300">
             <!-- Modal Header (Fix tetején) -->
@@ -388,12 +388,12 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <!-- Modal Body - Ahol kizárólag a gyönyörű, egyedi stílusú görgetősáv jelenik meg -->
-            <div class="overflow-y-auto flex-1 bg-korpus-bg p-2 sm:p-6">
+            <!-- Modal Body - Nincs benne külön görgető, így a Minup saját sávja érvényesül teljes magasságban duplikáció nélkül -->
+            <div class="flex-1 bg-korpus-bg overflow-hidden relative">
                 <iframe id="modal-minup-iframe" 
                         src="" 
                         data-src="https://app.minup.io/embed/korpus-balaton-massage/services?canStartPayment=true" 
-                        class="w-full h-full min-h-[600px] border-0 rounded-2xl bg-white shadow-inner">
+                        class="w-full h-full border-0 bg-white">
                 </iframe>
             </div>
         </div>
@@ -541,7 +541,7 @@
                 nav_gallery: "Galerie",
                 nav_contact: "Kontakt",
                 hero_badge: "Premium Wellness & Rehabilitation",
-                hero_subtitle: "Massage mit kostenlosen Parkplätzen in Balatonfüred oder in Csopak im Lélekpart Studio am Ufer.",
+                hero_subtitle: "Massage mit kostenlosen Parkplätzen in Balatonfüred oder im Csopak im Lélekpart Studio am Ufer.",
                 cta_book: "Termin vereinbaren",
                 cta_prices: "Preise ansehen",
                 about_tag: "Unsere Philosophie",
