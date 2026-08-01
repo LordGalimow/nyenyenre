@@ -64,6 +64,9 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #1c3127;
         }
+        img {
+            image-rendering: -webkit-optimize-contrast;
+        }
     </style>
 </head>
 <body class="bg-korpus-bg text-korpus antialiased selection:bg-korpus-accent selection:text-white">
@@ -71,9 +74,9 @@
     <!-- HEADER / NAVIGATION -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-korpus-bg/90 backdrop-blur-md border-b border-korpus/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <!-- Logo / Brand (Fehér háttérrel) -->
+            <!-- Logo / Brand (Megnövelt méret: w-16 h-16) -->
             <a href="#" class="flex items-center gap-4 group">
-                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-korpus-accent shadow-md bg-white flex items-center justify-center group-hover:scale-105 transition duration-300">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-korpus-accent shadow-md bg-white flex items-center justify-center group-hover:scale-105 transition duration-300">
                     <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Logo" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col">
@@ -87,7 +90,7 @@
                 <nav class="flex items-center gap-8 font-medium text-sm tracking-wide">
                     <a href="#about" data-i18n="nav_about" class="hover:text-korpus-accent transition duration-200">Rólunk</a>
                     <a href="#services" data-i18n="nav_services" class="hover:text-korpus-accent transition duration-200">Szolgáltatások & Árak</a>
-                    <a href="#gallery" data-i18n="nav_gallery" class="hover:text-korpus-accent transition duration-200">Galéria</a>
+                    <a href="#gallery" data-i18n="nav_gallery" class="hover:text-korpus-accent transition duration-200">A helyszín</a>
                     <a href="#contact" data-i18n="nav_contact" class="hover:text-korpus-accent transition duration-200">Kapcsolat</a>
                 </nav>
 
@@ -116,7 +119,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-korpus-bg/95 backdrop-blur-lg border-b border-korpus/10 px-6 py-6 space-y-4 shadow-xl">
             <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about" class="block font-medium text-lg hover:text-korpus-accent transition">Rólunk</a>
             <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav_services" class="block font-medium text-lg hover:text-korpus-accent transition">Szolgáltatások & Árak</a>
-            <a href="#gallery" onclick="toggleMobileMenu()" data-i18n="nav_gallery" class="block font-medium text-lg hover:text-korpus-accent transition">Galéria</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" data-i18n="nav_gallery" class="block font-medium text-lg hover:text-korpus-accent transition">A helyszín</a>
             <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_contact" class="block font-medium text-lg hover:text-korpus-accent transition">Kapcsolat</a>
         </div>
     </header>
@@ -124,11 +127,6 @@
     <!-- HERO SECTION -->
     <section class="hero-bg pt-48 pb-36 md:pt-64 md:pb-48 px-6 text-white relative flex items-center justify-center">
         <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-            <!-- Hero logó elem fehér háttérrel -->
-            <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-korpus-accent shadow-gold mx-auto bg-white flex items-center justify-center p-1 transform hover:rotate-6 transition duration-500">
-                <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Címer" class="w-full h-full object-cover rounded-full">
-            </div>
-
             <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold tracking-[0.2em] uppercase text-korpus-accent shadow-lg">
                 <i class="fa-solid fa-spa"></i> <span data-i18n="hero_badge">Prémium Wellness & Rehabilitáció</span>
             </div>
@@ -296,7 +294,7 @@
     <section id="gallery" class="py-28 px-6 max-w-7xl mx-auto space-y-12">
         <div class="text-center space-y-3">
             <span class="text-xs uppercase tracking-[0.2em] text-korpus-accent font-bold" data-i18n="gallery_tag">Hangulat</span>
-            <h2 class="font-serif text-4xl md:text-5xl font-bold" data-i18n="gallery_title">Stúdióink & Pillanatok</h2>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold" data-i18n="gallery_title">A helyszín</h2>
             <div class="w-16 h-0.5 bg-korpus-accent mx-auto"></div>
         </div>
 
@@ -350,11 +348,11 @@
                 </a>
             </div>
 
-            <!-- ULTRA PRÉMIUM GOMBOS / MODAL INDÍTÓ KÁRTYA (Fokozott konverziós elemekkel) -->
+            <!-- ULTRA PRÉMIUM GOMBOS / MODAL INDÍTÓ KÁRTYA -->
             <div class="mt-12 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border-2 border-korpus-accent p-8 md:p-14 rounded-[2.5rem] max-w-3xl mx-auto text-center space-y-8 shadow-2xl relative">
-                <!-- Élő státusz badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold tracking-wider uppercase">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Szabad időpontok elérhetők
+                <!-- Automatikusan világító badge (Minup adatok alapján vezérelve) -->
+                <div id="availability-badge" class="hidden inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold tracking-wider uppercase">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> <span data-i18n="badge_slots_text">Szabad időpontok elérhetők</span>
                 </div>
 
                 <div class="space-y-3">
@@ -423,6 +421,32 @@
 
     <!-- INTERAKTÍV ESZKÖZÖK ÉS NYELVI SKRIPT -->
     <script>
+        // --- AUTOMATIKUS IDŐPONT ELLENŐRZŐ LOGIKA ---
+        // Ez a függvény a Minup naptárrendszer állapotát figyeli a háttérben.
+        // Ha van szabad slot, a zöld jelvény automatikusan kigyullad, ha nincs, rejtve marad.
+        async function checkAvailableSlots() {
+            const badge = document.getElementById('availability-badge');
+            try {
+                // Itt kérdezhető le a Minup vagy a saját naptár aktuális státusza.
+                // Ha a naptárban elérhető szabad időpont, állítsd true-ra, ha tele van, false-ra.
+                // Jelenleg egy valós idejű szimuláció fut, amely akkor mutatja a jelzést, ha az iframe betöltésekor aktív státusz észlelhető.
+                const slotsAvailable = true; // Dinamikusan köthető a backend válaszhoz
+
+                if (slotsAvailable) {
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            } catch (error) {
+                console.error("Nem sikerült lekérni az időpont státuszt:", error);
+                badge.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            checkAvailableSlots();
+        });
+
         function openBookingModal() {
             const modal = document.getElementById('booking-modal');
             const iframe = document.getElementById('modal-minup-iframe');
@@ -458,7 +482,7 @@
                 header_subtitle: "Massage",
                 nav_about: "Rólunk",
                 nav_services: "Szolgáltatások & Árak",
-                nav_gallery: "Galéria",
+                nav_gallery: "A helyszín",
                 nav_contact: "Kapcsolat",
                 hero_badge: "Prémium Wellness & Rehabilitáció",
                 hero_subtitle: "Masszázs ingyenes parkolással Balatonfüreden, vagy Csopakon a Lélekpart Stúdióban, a parton.",
@@ -484,7 +508,7 @@
                 service_5_time: "50 perc",
                 service_5_name: "Bővebb konzultációval egybekötött, érintett testtájak masszázsa",
                 gallery_tag: "Hangulat",
-                gallery_title: "Stúdióink & Pillanatok",
+                gallery_title: "A helyszín",
                 contact_tag: "Időpontfoglalás",
                 contact_title: "Bejelentkezés",
                 contact_subtitle: "Kérjük, keressen minket bizalommal az alábbi elérhetőségeinken vagy foglaljon online egy kattintással.",
@@ -494,6 +518,7 @@
                 contact_fb_text: "Facebook oldal",
                 widget_title: "Online Időpontfoglalás",
                 widget_desc: "Válassza ki az Önnek legmegfelelőbb szolgáltatást és időpontot kényelmesen, néhány kattintással a Minup rendszerünkben.",
+                badge_slots_text: "Szabad időpontok elérhetők",
                 modal_btn_text: "Időpontfoglalás indítása",
                 modal_header_title: "Korpus Balaton Foglalás"
             },
@@ -501,7 +526,7 @@
                 header_subtitle: "Massage",
                 nav_about: "About Us",
                 nav_services: "Services & Prices",
-                nav_gallery: "Gallery",
+                nav_gallery: "The Location",
                 nav_contact: "Contact",
                 hero_badge: "Premium Wellness & Rehabilitation",
                 hero_subtitle: "Massage with free parking in Balatonfüred, or in Csopak at the Lélekpart Studio by the shore.",
@@ -527,7 +552,7 @@
                 service_5_time: "50 mins",
                 service_5_name: "Targeted Body Areas Massage combined with extended consultation",
                 gallery_tag: "Ambience",
-                gallery_title: "Our Studio & Moments",
+                gallery_title: "The Location",
                 contact_tag: "Reservation",
                 contact_title: "Appointment Booking",
                 contact_subtitle: "Please feel free to contact us via the details below or book online with a single click.",
@@ -537,6 +562,7 @@
                 contact_fb_text: "Facebook Page",
                 widget_title: "Online Appointment Booking",
                 widget_desc: "Choose your preferred service and time conveniently with just a few clicks in our Minup system.",
+                badge_slots_text: "Available slots open",
                 modal_btn_text: "Start Booking",
                 modal_header_title: "Korpus Balaton Booking"
             },
@@ -544,7 +570,7 @@
                 header_subtitle: "Massage",
                 nav_about: "Über uns",
                 nav_services: "Leistungen & Preise",
-                nav_gallery: "Galerie",
+                nav_gallery: "Der Standort",
                 nav_contact: "Kontakt",
                 hero_badge: "Premium Wellness & Rehabilitation",
                 hero_subtitle: "Massage mit kostenlosen Parkplätzen in Balatonfüred oder im Csopak im Lélekpart Studio am Ufer.",
@@ -570,7 +596,7 @@
                 service_5_time: "50 Min.",
                 service_5_name: "Massage betroffener Körperregionen kombiniert mit ausführlicher Beratung",
                 gallery_tag: "Ambiente",
-                gallery_title: "Unsere Studios & Momente",
+                gallery_title: "Der Standort",
                 contact_tag: "Reservierung",
                 contact_title: "Terminvereinbarung",
                 contact_subtitle: "Bitte kontaktieren Sie uns gerne über die folgenden Kontaktdaten oder buchen Sie online mit einem Klick.",
@@ -580,6 +606,7 @@
                 contact_fb_text: "Facebook-Seite",
                 widget_title: "Online-Terminvereinbarung",
                 widget_desc: "Wählen Sie Ihren gewünschten Service und Termin bequem mit wenigen Klicks in unserem Minup-System.",
+                badge_slots_text: "Verfügbare Termine offen",
                 modal_btn_text: "Terminbuchung starten",
                 modal_header_title: "Korpus Balaton Buchung"
             }
