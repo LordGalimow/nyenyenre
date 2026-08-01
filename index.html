@@ -147,7 +147,7 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT SECTION + FEATURED BRAND LOGO SHOWCASE -->
     <section id="about" class="py-28 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16 items-center">
             <div class="space-y-6">
@@ -170,12 +170,34 @@
                 </div>
             </div>
 
-            <div class="relative">
-                <div class="absolute -inset-4 bg-korpus-accent/15 rounded-3xl blur-2xl -z-10"></div>
-                <img src="images/1000006459.jpg" alt="Korpus Balaton Masszázs Szoba" class="rounded-3xl shadow-2xl object-cover w-full h-[480px] border border-korpus/10">
-                <div class="absolute -bottom-6 -left-6 bg-korpus text-white p-8 rounded-2xl shadow-2xl border border-korpus-accent/30 hidden sm:block">
-                    <p class="font-serif text-4xl font-bold text-korpus-accent">20+</p>
-                    <p class="text-[10px] tracking-[0.2em] uppercase text-white/80 pt-1" data-i18n="experience_text">Év szakmai tapasztalat</p>
+            <div class="space-y-6">
+                <!-- ÚJ: KIEMELT, NAGY MÉRETŰ MÁRKAKÁRTYA A LOGÓVAL -->
+                <div class="bg-korpus text-white p-8 md:p-10 rounded-3xl shadow-2xl border border-korpus-accent/30 relative overflow-hidden flex flex-col items-center text-center space-y-6">
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-korpus-accent/20 rounded-full blur-3xl"></div>
+                    
+                    <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-korpus-accent shadow-gold bg-korpus-dark flex items-center justify-center p-1 relative z-10 transform hover:scale-105 transition duration-500">
+                        <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Címeres Logo" class="w-full h-full object-cover rounded-full">
+                    </div>
+
+                    <div class="space-y-2 relative z-10">
+                        <h3 class="font-serif text-3xl font-bold tracking-wide text-korpus-accent">Korpus Balaton</h3>
+                        <p class="text-xs uppercase tracking-[0.3em] text-white/70 font-semibold" data-i18n="logo_card_subtitle">Professional Massage & Therapy</p>
+                    </div>
+
+                    <p class="text-sm text-white/80 font-light max-w-sm leading-relaxed relative z-10" data-i18n="logo_card_desc">
+                        Ahol a szakértelem és a Balaton parti nyugalom találkozik a testi-lelki megújulásért.
+                    </p>
+                </div>
+
+                <!-- Második kép kártya -->
+                <div class="relative overflow-hidden rounded-3xl shadow-luxury border border-korpus/10 h-64">
+                    <img src="images/1000006459.jpg" alt="Korpus Balaton Masszázs Szoba" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-korpus-dark/80 via-transparent to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <p class="font-serif text-2xl font-bold text-korpus-accent">20+</p>
+                            <p class="text-[10px] tracking-[0.2em] uppercase text-white/80" data-i18n="experience_text">Év szakmai tapasztalat</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,7 +292,7 @@
         </div>
     </section>
 
-    <!-- CONTACT & BOOKING SECTION -->
+    <!-- CONTACT & ENHANCED BOOKING SECTION -->
     <section id="contact" class="py-28 bg-korpus text-white px-6 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:20px_20px]"></div>
         <div class="max-w-5xl mx-auto text-center space-y-12 relative z-10">
@@ -307,20 +329,23 @@
                 </a>
             </div>
 
-            <!-- PRÉMIUM IDŐPONTFOGLALÓ WIDGET KONTÉNER -->
-            <div class="mt-16 bg-white/5 backdrop-blur-xl border border-korpus-accent/30 p-4 md:p-8 rounded-3xl max-w-4xl mx-auto text-center space-y-6 shadow-2xl relative">
-                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-48 h-12 bg-korpus-accent/20 blur-2xl rounded-full -z-10"></div>
+            <!-- TOVÁBBFEJLESZTETT, PRÉMIUM IDŐPONTFOGLALÓ WIDGET KONTÉNER -->
+            <div class="mt-16 bg-white/10 backdrop-blur-2xl border-2 border-korpus-accent/50 p-6 md:p-12 rounded-[2.5rem] max-w-4xl mx-auto text-center space-y-8 shadow-[0_0_50px_rgba(197,160,89,0.15)] relative">
+                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-64 h-16 bg-korpus-accent/30 blur-3xl rounded-full -z-10"></div>
                 
-                <div class="space-y-2">
-                    <span class="text-[10px] uppercase tracking-[0.25em] text-korpus-accent font-semibold" data-i18n="widget_badge">Gyors és kényelmes</span>
-                    <h3 class="font-serif text-3xl font-bold text-white" data-i18n="widget_title">Online Időpontfoglalás</h3>
-                    <p class="text-sm text-white/70 font-light max-w-md mx-auto" data-i18n="widget_desc">Válassza ki az Ön számára legmegfelelőbb időpontot és kezelést:</p>
+                <div class="space-y-3">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-korpus-accent/20 text-korpus-accent text-xs font-semibold tracking-widest uppercase">
+                        <i class="fa-solid fa-bolt"></i> <span data-i18n="widget_badge">Gyors és kényelmes</span>
+                    </div>
+                    <h3 class="font-serif text-4xl md:text-5xl font-bold text-white" data-i18n="widget_title">Online Időpontfoglalás</h3>
+                    <p class="text-base text-white/80 font-light max-w-lg mx-auto" data-i18n="widget_desc">Válassza ki az Ön számára legmegfelelőbb időpontot és kezelést néhány kattintással:</p>
                 </div>
 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-inner border border-white/10 text-left w-full">
+                <!-- Minup Iframe Container refined with luxury inner shadow -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/20 text-left w-full p-2 md:p-4">
                     <iframe id="minup-iframe" 
                             src="https://app.minup.io/embed/korpus-balaton-massage/services?canStartPayment=true" 
-                            style="width: 100%; min-height: 680px; max-width: 100%; border: none; display: block;" 
+                            style="width: 100%; min-height: 720px; max-width: 100%; border: none; display: block; border-radius: 1rem;" 
                             onload="resizeIframe(this)"
                             scrolling="no">
                     </iframe>
@@ -379,6 +404,8 @@
                 about_p2: "A Korpus Balaton Massage egyéni konzultációt és professzionális masszázskezeléseket ajánl a Balaton északi partján, Balatonfüreden és Csopakon.",
                 about_p3: "Tökéletes megoldás a felborult testi egyensúly visszaállítására, a stressz elengedésére, a fizikális felépülés támogatására, a fájdalom csökkentésére, valamint az ülő- vagy állómunka okozta terhelések felszabadítására. Kezeléseinket teljesen a páciensek egyedi igényeire szabjuk.",
                 experience_text: "Év szakmai tapasztalat",
+                logo_card_subtitle: "Professional Massage & Therapy",
+                logo_card_desc: "Ahol a szakértelem és a Balaton parti nyugalom találkozik a testi-lelki megújulásért.",
                 services_tag: "Befektetés az egészségbe",
                 services_title: "Szolgáltatásaink és bruttó áraink",
                 service_1_time: "25 perc",
@@ -402,7 +429,7 @@
                 contact_fb_text: "Facebook oldal",
                 widget_badge: "Gyors és kényelmes",
                 widget_title: "Online Időpontfoglalás",
-                widget_desc: "Válassza ki az Ön számára legmegfelelőbb időpontot és kezelést:"
+                widget_desc: "Válassza ki az Ön számára legmegfelelőbb időpontot és kezelést néhány kattintással:"
             },
             en: {
                 header_subtitle: "Massage",
@@ -421,6 +448,8 @@
                 about_p2: "Korpus Balaton Massage offers individual consultations and professional massage treatments on the northern shore of Lake Balaton, in Balatonfüred and Csopak.",
                 about_p3: "It is the perfect solution for restoring disrupted body balance, releasing stress, supporting physical recovery, managing and reducing pain, and relieving strain caused by sedentary or standing work. Treatments are tailored to the individual needs of patients.",
                 experience_text: "Years of Experience",
+                logo_card_subtitle: "Professional Massage & Therapy",
+                logo_card_desc: "Where expertise and lakeside tranquility meet for physical and mental renewal.",
                 services_tag: "Investment in Health",
                 services_title: "Our Services & Gross Prices",
                 service_1_time: "25 mins",
@@ -444,7 +473,7 @@
                 contact_fb_text: "Facebook Page",
                 widget_badge: "Fast & Convenient",
                 widget_title: "Online Appointment Booking",
-                widget_desc: "Choose the most suitable time and treatment for you:"
+                widget_desc: "Choose the most suitable time and treatment for you in just a few clicks:"
             },
             de: {
                 header_subtitle: "Massage",
@@ -463,6 +492,8 @@
                 about_p2: "Korpus Balaton Massage bietet individuelle Beratungen und professionelle Massagebehandlungen am Nordufer des Plattensees in Balatonfüred und Csopak an.",
                 about_p3: "Es ist die perfekte Lösung zur Wiederherstellung des gestörten Körpergleichgewichts, zum Stressabbau, zur Unterstützung der körperlichen Genesung, zur Schmerzbehandlung und -linderung sowie zur Entlastung bei Sitz- oder Steharbeit. Die Behandlungen werden auf die individuellen Bedürfnisse der Patienten zugeschnitten.",
                 experience_text: "Jahre Berufserfahrung",
+                logo_card_subtitle: "Professional Massage & Therapy",
+                logo_card_desc: "Wo Fachkompetenz und Seeufer-Ruhe für körperliche und geistige Erneuerung zusammentreffen.",
                 services_tag: "Investition in die Gesundheit",
                 services_title: "Unsere Leistungen & Bruttopreise",
                 service_1_time: "25 Min.",
@@ -486,7 +517,7 @@
                 contact_fb_text: "Facebook-Seite",
                 widget_badge: "Schnell & Bequem",
                 widget_title: "Online-Terminvereinbarung",
-                widget_desc: "Wählen Sie Ihren gewünschten Termin und Ihre Behandlung aus:"
+                widget_desc: "Wählen Sie Ihren gewünschten Termin und Ihre Behandlung mit wenigen Klicks aus:"
             }
         };
 
