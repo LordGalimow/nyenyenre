@@ -51,6 +51,7 @@
             background-size: cover;
             background-position: center;
         }
+        /* Egyedi, stílusos görgetősáv az egész oldalon és a modalon belül is */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -372,11 +373,11 @@
         </div>
     </section>
 
-    <!-- FULLSCREEN MODAL / FELUGRÓ ABLAK A MINUP FOGLALÁSHOZ -->
-    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-korpus-dark/90 backdrop-blur-xl flex items-center justify-center p-2 sm:p-6 overflow-y-auto">
-        <div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col relative max-h-[92vh] border border-korpus-accent/30 animate-in fade-in zoom-in duration-300">
-            <!-- Modal Header -->
-            <div class="bg-korpus px-6 py-4 flex items-center justify-between text-white border-b border-korpus-accent/20">
+    <!-- FULLSCREEN MODAL / FELUGRÓ ABLAK A MINUP FOGLALÁSHOZ (STÍLUSOS EGYEDI GÖRGETÉSSEL) -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-korpus-dark/90 backdrop-blur-xl flex items-center justify-center p-2 sm:p-6 overflow-hidden">
+        <div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col relative h-[92vh] border border-korpus-accent/30 animate-in fade-in zoom-in duration-300">
+            <!-- Modal Header (Fix tetején) -->
+            <div class="bg-korpus px-6 py-4 flex items-center justify-between text-white border-b border-korpus-accent/20 flex-shrink-0">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-full bg-korpus-accent text-korpus-dark flex items-center justify-center font-bold text-sm">
                         <i class="fa-solid fa-spa"></i>
@@ -387,12 +388,12 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <!-- Modal Body (Iframe) -->
-            <div class="p-2 sm:p-6 overflow-y-auto flex-1 bg-korpus-bg">
+            <!-- Modal Body - Ahol kizárólag a gyönyörű, egyedi stílusú görgetősáv jelenik meg -->
+            <div class="overflow-y-auto flex-1 bg-korpus-bg p-2 sm:p-6">
                 <iframe id="modal-minup-iframe" 
                         src="" 
                         data-src="https://app.minup.io/embed/korpus-balaton-massage/services?canStartPayment=true" 
-                        class="w-full min-h-[650px] border-0 rounded-2xl bg-white shadow-inner">
+                        class="w-full h-full min-h-[600px] border-0 rounded-2xl bg-white shadow-inner">
                 </iframe>
             </div>
         </div>
