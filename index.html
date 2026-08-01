@@ -20,7 +20,7 @@
                             light: '#2d4d3e',
                             bg: '#fbf9f5',
                             card: '#f4f0ea',
-                            accent: '#c5a059', // Prémium arany tónus
+                            accent: '#c5a059',
                             accentHover: '#d4b26f'
                         }
                     },
@@ -51,7 +51,6 @@
             background-size: cover;
             background-position: center;
         }
-        /* Egyedi görgetősáv stílus */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -73,13 +72,13 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-korpus-bg/90 backdrop-blur-md border-b border-korpus/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             <!-- Logo / Brand -->
-            <a href="#" class="flex items-center gap-3.5 group">
-                <div class="w-12 h-12 rounded-full overflow-hidden border border-korpus-accent/40 shadow-sm bg-korpus flex items-center justify-center group-hover:border-korpus-accent transition duration-300">
+            <a href="#" class="flex items-center gap-4 group">
+                <div class="w-14 h-14 rounded-full overflow-hidden border border-korpus-accent/40 shadow-sm bg-korpus flex items-center justify-center group-hover:border-korpus-accent transition duration-300">
                     <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Logo" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-serif text-2xl font-bold tracking-wide group-hover:text-korpus-accent transition duration-300">Korpus Balaton</span>
-                    <span class="text-[9px] tracking-[0.25em] uppercase text-korpus-accent -mt-1 font-semibold" data-i18n="header_subtitle">Massage</span>
+                    <span class="font-serif text-2xl md:text-3xl font-bold tracking-wide group-hover:text-korpus-accent transition duration-300 leading-none">Korpus Balaton</span>
+                    <span class="text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-korpus-accent font-semibold mt-1" data-i18n="header_subtitle">Massage</span>
                 </div>
             </a>
 
@@ -103,7 +102,7 @@
             <!-- Mobile Menu Button -->
             <div class="flex items-center md:hidden gap-4">
                 <div class="flex items-center bg-korpus-card border border-korpus/10 rounded-full p-0.5 text-[10px] font-semibold">
-                    <button onclick="setLanguage('hu')" id="mob-btn-hu" class="px-2.5 py-1 rounded-full bg-korpus text-white">HU</button>
+                    <button onclick="setLanguage('hu')" id="mob-btn-hu" class="px-2.5 py-1 rounded-full bg-korpus text-white shadow-sm">HU</button>
                     <button onclick="setLanguage('en')" id="mob-btn-en" class="px-2.5 py-1 rounded-full text-korpus">EN</button>
                     <button onclick="setLanguage('de')" id="mob-btn-de" class="px-2.5 py-1 rounded-full text-korpus">DE</button>
                 </div>
@@ -151,7 +150,6 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="py-28 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16 items-center">
-            <!-- Bal oldal: Szöveg -->
             <div class="space-y-6">
                 <div class="space-y-3">
                     <span class="text-xs uppercase tracking-[0.2em] text-korpus-accent font-bold" data-i18n="about_tag">Filozófiánk</span>
@@ -172,7 +170,6 @@
                 </div>
             </div>
 
-            <!-- Jobb oldal: Kép -->
             <div class="relative">
                 <div class="absolute -inset-4 bg-korpus-accent/15 rounded-3xl blur-2xl -z-10"></div>
                 <img src="images/1000006459.jpg" alt="Korpus Balaton Masszázs Szoba" class="rounded-3xl shadow-2xl object-cover w-full h-[480px] border border-korpus/10">
@@ -284,7 +281,6 @@
                 <p class="text-white/80 max-w-xl mx-auto pt-2 font-light" data-i18n="contact_subtitle">Kérjük, keressen minket bizalommal az alábbi elérhetőségeinken vagy foglaljon online.</p>
             </div>
 
-            <!-- Elérhetőségek & Facebook gomb -->
             <div class="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
                 <a href="tel:+36701725509" class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-korpus-accent/50 transition-all duration-300 flex flex-col items-center gap-4 group shadow-xl">
                     <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
@@ -311,7 +307,7 @@
                 </a>
             </div>
 
-            <!-- PRÉMIUM IDŐPONTFOGLALÓ WIDGET KONTÉNER (Dinamikusan méreteződő, görgetésmentes Iframe) -->
+            <!-- PRÉMIUM IDŐPONTFOGLALÓ WIDGET KONTÉNER -->
             <div class="mt-16 bg-white/5 backdrop-blur-xl border border-korpus-accent/30 p-4 md:p-8 rounded-3xl max-w-4xl mx-auto text-center space-y-6 shadow-2xl relative">
                 <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-48 h-12 bg-korpus-accent/20 blur-2xl rounded-full -z-10"></div>
                 
@@ -346,12 +342,10 @@
 
     <!-- INTERAKTÍV ESZKÖZÖK ÉS NYELVI SKRIPT -->
     <script>
-        // Minup iframe automatikus magasság-igazítása görgetés ellen
         function resizeIframe(obj) {
             try {
                 obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
             } catch (e) {
-                // Cross-origin fallback abban az esetben, ha a böngésző blokkolja az automatikus mérést
                 obj.style.height = "750px";
             }
         }
@@ -362,13 +356,11 @@
             if (data.type === "redirect_to_payment") { 
                 window.location.href = data.url; 
             } 
-            // Magasság frissítése, ha a Minup küld méret-eseményt
             if (data.height && document.getElementById("minup-iframe")) {
                 document.getElementById("minup-iframe").style.height = (data.height + 30) + "px";
             }
         });
 
-        // Fordítások
         const translations = {
             hu: {
                 header_subtitle: "Massage",
@@ -504,7 +496,7 @@
                 const mobBtn = document.getElementById(`mob-btn-${l}`);
                 if (l === lang) {
                     if(btn) { btn.className = "px-3.5 py-1.5 rounded-full transition bg-korpus text-white shadow-sm"; }
-                    if(mobBtn) { mobBtn.className = "px-2.5 py-1 rounded-full bg-korpus text-white"; }
+                    if(mobBtn) { mobBtn.className = "px-2.5 py-1 rounded-full bg-korpus text-white shadow-sm"; }
                 } else {
                     if(btn) { btn.className = "px-3.5 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark"; }
                     if(mobBtn) { mobBtn.className = "px-2.5 py-1 rounded-full text-korpus"; }
