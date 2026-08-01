@@ -350,7 +350,7 @@
 
             <!-- ULTRA PRÉMIUM GOMBOS / MODAL INDÍTÓ KÁRTYA -->
             <div class="mt-12 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border-2 border-korpus-accent p-8 md:p-14 rounded-[2.5rem] max-w-3xl mx-auto text-center space-y-8 shadow-2xl relative">
-                <!-- Automatikusan világító badge (Minup adatok alapján vezérelve) -->
+                <!-- Automatikusan világító badge (Alapértelmezésben rejtett, ha nincs szabad időpont) -->
                 <div id="availability-badge" class="hidden inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold tracking-wider uppercase">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> <span data-i18n="badge_slots_text">Szabad időpontok elérhetők</span>
                 </div>
@@ -422,15 +422,12 @@
     <!-- INTERAKTÍV ESZKÖZÖK ÉS NYELVI SKRIPT -->
     <script>
         // --- AUTOMATIKUS IDŐPONT ELLENŐRZŐ LOGIKA ---
-        // Ez a függvény a Minup naptárrendszer állapotát figyeli a háttérben.
-        // Ha van szabad slot, a zöld jelvény automatikusan kigyullad, ha nincs, rejtve marad.
+        // Ha nincsenek szabad időpontok, a slotsAvailable értéke false, így a jelvény rejtve marad.
         async function checkAvailableSlots() {
             const badge = document.getElementById('availability-badge');
             try {
-                // Itt kérdezhető le a Minup vagy a saját naptár aktuális státusza.
-                // Ha a naptárban elérhető szabad időpont, állítsd true-ra, ha tele van, false-ra.
-                // Jelenleg egy valós idejű szimuláció fut, amely akkor mutatja a jelzést, ha az iframe betöltésekor aktív státusz észlelhető.
-                const slotsAvailable = true; // Dinamikusan köthető a backend válaszhoz
+                // ITT ÁLLÍTSD ÁT: Ha a naptárban most nincs szabad hely, állítsd false-ra!
+                const slotsAvailable = false; 
 
                 if (slotsAvailable) {
                     badge.classList.remove('hidden');
