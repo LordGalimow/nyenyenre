@@ -514,9 +514,17 @@
             }
         });
 
-        window.addEventListener("message", (event) => { 
+        // Minup üzenetek figyelése: Ha a foglalás sikeresen lezajlott vagy átirányítana, automatikusan bezárja a keretet és felugrasztja a Köszönjük modalt!
+        window.addEventListener('message', (event) => { 
             if (event.origin !== "https://app.minup.io") return; 
             const data = event.data; 
+            
+            // Ha a minup küld valamilyen sikeres foglalási/tranzakciós üzenetet
+            if (data && (data.type === "booking_success" || data.type === "success" || data.action === "success")) {
+                closeBookingModal();
+                openThankYouModal();
+            }
+            
             if (data.type === "redirect_to_payment") { 
                 window.location.href = data.url; 
             } 
