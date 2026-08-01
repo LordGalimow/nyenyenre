@@ -150,7 +150,7 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT SECTION (Kihúzva a 20+ éves szöveg) -->
     <section id="about" class="py-28 px-6 max-w-5xl mx-auto">
         <div class="space-y-16">
             <div class="text-center space-y-3">
@@ -162,7 +162,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 text-lg text-korpus/90 leading-relaxed font-light">
                     <p>
-                        <strong class="font-semibold text-korpus" data-i18n="about_p1_strong">A Korpus Balaton Massage alapítója Klemens Ádám</strong> <span data-i18n="about_p1">rehabilitációs terapeuta, gyógymasszőr. Több mint 20 éve foglalkozik az emberi szervezet teljességének fizikális, lelki és szellemi támogatásával.</span>
+                        <strong class="font-semibold text-korpus" data-i18n="about_p1_strong">A Korpus Balaton Massage alapítója Klemens Ádám</strong> <span data-i18n="about_p1">rehabilitációs terapeuta, gyógymasszőr. Célunk az emberi szervezet teljességének fizikális, lelki és szellemi támogatása.</span>
                     </p>
                     <p data-i18n="about_p2">
                         A Korpus Balaton Massage egyéni konzultációt és professzionális masszázskezeléseket ajánl a Balaton északi partján, Balatonfüreden és Csopakon.
@@ -176,8 +176,8 @@
                     <img src="images/1000006459.jpg" alt="Korpus Balaton Masszázs Szoba" class="w-full h-full object-cover hover:scale-105 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-korpus-dark/80 via-transparent to-transparent flex items-end p-8">
                         <div class="text-white space-y-1">
-                            <p class="font-serif text-3xl font-bold text-korpus-accent">20+ Év</p>
-                            <p class="text-xs tracking-[0.2em] uppercase text-white/80" data-i18n="experience_text">Szakmai tapasztalat a gyógyításban</p>
+                            <p class="font-serif text-2xl font-bold text-korpus-accent" data-i18n="about_badge_title">Prémium Környezet</p>
+                            <p class="text-xs tracking-[0.2em] uppercase text-white/80" data-i18n="experience_text">Szakértelem és harmónia a parton</p>
                         </div>
                     </div>
                 </div>
@@ -350,7 +350,7 @@
 
             <!-- ULTRA PRÉMIUM GOMBOS / MODAL INDÍTÓ KÁRTYA -->
             <div class="mt-12 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border-2 border-korpus-accent p-8 md:p-14 rounded-[2.5rem] max-w-3xl mx-auto text-center space-y-8 shadow-2xl relative">
-                <!-- Automatikusan világító badge (Alapértelmezésben rejtett, ha nincs szabad időpont) -->
+                <!-- Automatikusan világító badge -->
                 <div id="availability-badge" class="hidden inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold tracking-wider uppercase">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> <span data-i18n="badge_slots_text">Szabad időpontok elérhetők</span>
                 </div>
@@ -373,9 +373,13 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button onclick="openBookingModal()" class="w-full sm:w-auto px-10 py-5 rounded-full bg-korpus-accent text-korpus-dark font-bold text-base shadow-gold hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-3 tracking-wider uppercase transform hover:-translate-y-1">
                         <i class="fa-solid fa-calendar-check text-lg"></i> <span data-i18n="modal_btn_text">Időpontfoglalás indítása</span>
+                    </button>
+                    <!-- Teszt Gomb a Köszönjük oldal megtekintéséhez -->
+                    <button onclick="openThankYouModal()" class="w-full sm:w-auto px-6 py-5 rounded-full bg-white/10 border border-white/30 text-white font-medium text-sm hover:bg-white/20 transition inline-flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-check text-korpus-accent"></i> <span data-i18n="thankyou_test_btn">Sikeres vásárlás nézet tesztje</span>
                     </button>
                 </div>
             </div>
@@ -384,7 +388,7 @@
 
     <!-- FULLSCREEN MODAL / FELUGRÓ ABLAK A MINUP FOGLALÁSHOZ -->
     <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-korpus-dark/90 backdrop-blur-xl flex items-center justify-center p-2 sm:p-6 overflow-hidden">
-        <div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col relative h-[92vh] border border-korpus-accent/30 animate-in fade-in zoom-in duration-300">
+        <div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col relative h-[92vh] border border-korpus-accent/30">
             <!-- Modal Header -->
             <div class="bg-korpus px-6 py-4 flex items-center justify-between text-white border-b border-korpus-accent/20 flex-shrink-0">
                 <div class="flex items-center gap-3">
@@ -408,6 +412,53 @@
         </div>
     </div>
 
+    <!-- KÖSZÖNJÜK A VÁSÁRLÁST / FOGLALÁST MODAL (ÚJ FUNKCIÓ) -->
+    <div id="thankyou-modal" class="fixed inset-0 z-50 hidden bg-korpus-dark/90 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col relative p-8 md:p-12 text-center border-2 border-korpus-accent/40 animate-in fade-in zoom-in duration-300">
+            
+            <!-- Bezáró gomb -->
+            <button onclick="closeThankYouModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-korpus-bg hover:bg-korpus-card text-korpus flex items-center justify-center transition text-lg" aria-label="Bezárás">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Ikon animáció -->
+            <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-6 shadow-inner">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <!-- Tartalom -->
+            <div class="space-y-4">
+                <span class="text-xs uppercase tracking-[0.25em] text-korpus-accent font-bold" data-i18n="ty_tag">Sikeres tranzakció</span>
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-korpus-dark" data-i18n="ty_title">Köszönjük a foglalást és a vásárlást!</h3>
+                <p class="text-korpus/80 font-light text-sm md:text-base leading-relaxed" data-i18n="ty_desc">
+                    Örömmel várjuk a Korpus Balaton Massage stúdiójában Balatonfüreden vagy Csopakon. A részleteket és a visszaigazolást elküldtük az e-mail címére.
+                </p>
+            </div>
+
+            <!-- Információs doboz -->
+            <div class="my-8 bg-korpus-bg p-5 rounded-2xl border border-korpus/10 text-xs text-korpus/70 space-y-2 text-left">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-location-dot text-korpus-accent text-sm"></i>
+                    <span data-i18n="ty_info_location">Helyszín: Lélekpart Stúdió (Balatonfüred / Csopak)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-car text-korpus-accent text-sm"></i>
+                    <span data-i18n="ty_info_parking">Ingyenes parkolási lehetőséggel várjuk</span>
+                </div>
+            </div>
+
+            <!-- Akció gombok -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button onclick="closeThankYouModal()" class="flex-1 py-4 rounded-full bg-korpus text-white font-bold text-xs uppercase tracking-wider hover:bg-korpus-light transition">
+                    <span data-i18n="ty_btn_home">Vissza a főoldalra</span>
+                </button>
+                <a href="tel:+36701725509" class="flex-1 py-4 rounded-full bg-korpus-accent text-korpus-dark font-bold text-xs uppercase tracking-wider hover:bg-korpus-accentHover transition inline-flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> <span data-i18n="ty_btn_call">Ügyfélszolgálat</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="py-10 bg-korpus-dark text-white/50 text-xs px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -422,12 +473,10 @@
     <!-- INTERAKTÍV ESZKÖZÖK ÉS NYELVI SKRIPT -->
     <script>
         // --- AUTOMATIKUS IDŐPONT ELLENŐRZŐ LOGIKA ---
-        // Ha nincsenek szabad időpontok, a slotsAvailable értéke false, így a jelvény rejtve marad.
         async function checkAvailableSlots() {
             const badge = document.getElementById('availability-badge');
             try {
-                // ITT ÁLLÍTSD ÁT: Ha a naptárban most nincs szabad hely, állítsd false-ra!
-                const slotsAvailable = false; 
+                const slotsAvailable = false; // Ha nincs szabad időpont, false
 
                 if (slotsAvailable) {
                     badge.classList.remove('hidden');
@@ -460,9 +509,21 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Köszönjük modal kezelése
+        function openThankYouModal() {
+            document.getElementById('thankyou-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeThankYouModal() {
+            document.getElementById('thankyou-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeBookingModal();
+                closeThankYouModal();
             }
         });
 
@@ -488,10 +549,11 @@
                 about_tag: "Filozófiánk",
                 about_title: "Dióhéjban",
                 about_p1_strong: "A Korpus Balaton Massage alapítója Klemens Ádám",
-                about_p1: "rehabilitációs terapeuta, gyógymasszőr. Több mint 20 éve foglalkozik az emberi szervezet teljességének fizikális, lelki és szellemi támogatásával.",
+                about_p1: "rehabilitációs terapeuta, gyógymasszőr. Célunk az emberi szervezet teljességének fizikális, lelki és szellemi támogatása.",
                 about_p2: "A Korpus Balaton Massage egyéni konzultációt és professzionális masszázskezeléseket ajánl a Balaton északi partján, Balatonfüreden és Csopakon.",
                 about_p3: "Tökéletes megoldás a felborult testi egyensúly visszaállítására, a stressz elengedésére, a fizikális felépülés támogatására, a fájdalom csökkentésére, valamint az ülő- vagy állómunka okozta terhelések felszabadítására. Kezeléseinket teljesen a páciensek egyedi igényeire szabjuk.",
-                experience_text: "Szakmai tapasztalat a gyógyításban",
+                about_badge_title: "Prémium Környezet",
+                experience_text: "Szakértelem és harmónia a parton",
                 services_tag: "Befektetés az egészségbe",
                 services_title: "Szolgáltatásaink és bruttó áraink",
                 service_1_time: "25 perc",
@@ -517,7 +579,15 @@
                 widget_desc: "Válassza ki az Önnek legmegfelelőbb szolgáltatást és időpontot kényelmesen, néhány kattintással a Minup rendszerünkben.",
                 badge_slots_text: "Szabad időpontok elérhetők",
                 modal_btn_text: "Időpontfoglalás indítása",
-                modal_header_title: "Korpus Balaton Foglalás"
+                thankyou_test_btn: "Sikeres vásárlás nézet tesztje",
+                modal_header_title: "Korpus Balaton Foglalás",
+                ty_tag: "Sikeres tranzakció",
+                ty_title: "Köszönjük a foglalást és a vásárlást!",
+                ty_desc: "Örömmel várjuk a Korpus Balaton Massage stúdiójában Balatonfüreden vagy Csopakon. A részleteket és a visszaigazolást elküldtük az e-mail címére.",
+                ty_info_location: "Helyszín: Lélekpart Stúdió (Balatonfüred / Csopak)",
+                ty_info_parking: "Ingyenes parkolási lehetőséggel várjuk",
+                ty_btn_home: "Vissza a főoldalra",
+                ty_btn_call: "Ügyfélszolgálat"
             },
             en: {
                 header_subtitle: "Massage",
@@ -532,10 +602,11 @@
                 about_tag: "Our Philosophy",
                 about_title: "In a Nutshell",
                 about_p1_strong: "The founder of Korpus Balaton Massage is Ádám Klemens",
-                about_p1: "rehabilitation therapist and medical massage therapist. For over 20 years, he has been dedicated to supporting the physical, mental, and spiritual wholeness of the human body.",
+                about_p1: "rehabilitation therapist and medical massage therapist. Our goal is to support the physical, mental, and spiritual wholeness of the human body.",
                 about_p2: "Korpus Balaton Massage offers individual consultations and professional massage treatments on the northern shore of Lake Balaton, in Balatonfüred and Csopak.",
                 about_p3: "It is the perfect solution for restoring disrupted body balance, releasing stress, supporting physical recovery, managing and reducing pain, and relieving strain caused by sedentary or standing work. Treatments are tailored to the individual needs of patients.",
-                experience_text: "Years of Experience in Healing",
+                about_badge_title: "Premium Environment",
+                experience_text: "Expertise and Harmony by the Shore",
                 services_tag: "Investment in Health",
                 services_title: "Our Services & Gross Prices",
                 service_1_time: "25 mins",
@@ -561,7 +632,15 @@
                 widget_desc: "Choose your preferred service and time conveniently with just a few clicks in our Minup system.",
                 badge_slots_text: "Available slots open",
                 modal_btn_text: "Start Booking",
-                modal_header_title: "Korpus Balaton Booking"
+                thankyou_test_btn: "Test Success View",
+                modal_header_title: "Korpus Balaton Booking",
+                ty_tag: "Successful Transaction",
+                ty_title: "Thank you for your booking and purchase!",
+                ty_desc: "We look forward to welcoming you at the Korpus Balaton Massage studio in Balatonfüred or Csopak. Details have been sent to your email.",
+                ty_info_location: "Location: Lélekpart Studio (Balatonfüred / Csopak)",
+                ty_info_parking: "Free parking available",
+                ty_btn_home: "Back to Home",
+                ty_btn_call: "Customer Service"
             },
             de: {
                 header_subtitle: "Massage",
@@ -576,10 +655,11 @@
                 about_tag: "Unsere Philosophie",
                 about_title: "Auf einen Blick",
                 about_p1_strong: "Der Gründer von Korpus Balaton Massage ist Ádám Klemens",
-                about_p1: "Rehabilitationstherapeut und Heilmasseur. Seit über 20 Jahren widmet er sich der physischen, mentalen und seelischen Unterstützung der Ganzheit des menschlichen Körpers.",
+                about_p1: "Rehabilitationstherapeut und Heilmasseur. Unser Ziel ist die physische, mentale und seelische Unterstützung der Ganzheit des menschlichen Körpers.",
                 about_p2: "Korpus Balaton Massage bietet individuelle Beratungen und professionelle Massagebehandlungen am Nordufer des Plattensees in Balatonfüred und Csopak an.",
                 about_p3: "Es ist die perfekte Lösung zur Wiederherstellung des gestörten Körpergleichgewichts, zum Stressabbau, zur Unterstützung der körperlichen Genesung, zur Schmerzbehandlung und -linderung sowie zur Entlastung bei Sitz- oder Steharbeit. Die Behandlungen werden auf die individuellen Bedürfnisse der Patienten zugeschnitten.",
-                experience_text: "Jahre Berufserfahrung in der Heilung",
+                about_badge_title: "Premium Umfeld",
+                experience_text: "Kompetenz und Harmonie am Ufer",
                 services_tag: "Investition in die Gesundheit",
                 services_title: "Unsere Leistungen & Bruttopreise",
                 service_1_time: "25 Min.",
@@ -605,7 +685,15 @@
                 widget_desc: "Wählen Sie Ihren gewünschten Service und Termin bequem mit wenigen Klicks in unserem Minup-System.",
                 badge_slots_text: "Verfügbare Termine offen",
                 modal_btn_text: "Terminbuchung starten",
-                modal_header_title: "Korpus Balaton Buchung"
+                thankyou_test_btn: "Erfolgsansicht testen",
+                modal_header_title: "Korpus Balaton Buchung",
+                ty_tag: "Erfolgreiche Transaktion",
+                ty_title: "Vielen Dank für Ihre Buchung und Ihren Kauf!",
+                ty_desc: "Wir freuen uns, Sie im Korpus Balaton Massage Studio in Balatonfüred oder Csopak begrüßen zu dürfen. Details wurden an Ihre E-Mail gesendet.",
+                ty_info_location: "Standort: Lélekpart Studio (Balatonfüred / Csopak)",
+                ty_info_parking: "Kostenlose Parkplätze stehen zur Verfügung",
+                ty_btn_home: "Zurück zur Startseite",
+                ty_btn_call: "Kundendienst"
             }
         };
 
