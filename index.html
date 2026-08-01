@@ -375,9 +375,9 @@
                     <button onclick="openBookingModal()" class="w-full sm:w-auto px-10 py-5 rounded-full bg-korpus-accent text-korpus-dark font-bold text-base shadow-gold hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-3 tracking-wider uppercase transform hover:-translate-y-1">
                         <i class="fa-solid fa-calendar-check text-lg"></i> <span data-i18n="modal_btn_text">Időpontfoglalás indítása</span>
                     </button>
-                    <!-- Teszt Gomb a Köszönjük nézethez -->
+                    <!-- Teszt Gomb a Köszönjük foglalást nézethez -->
                     <button onclick="openThankYouModal()" class="w-full sm:w-auto px-6 py-5 rounded-full bg-white/10 border border-white/30 text-white font-medium text-sm hover:bg-white/20 transition inline-flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-circle-check text-korpus-accent"></i> <span data-i18n="thankyou_test_btn">Köszönjük a foglalást nézet tesztje</span>
+                        <i class="fa-solid fa-circle-check text-korpus-accent"></i> <span data-i18n="thankyou_test_btn">Sikeres foglalás tesztelése</span>
                     </button>
                 </div>
             </div>
@@ -416,12 +416,13 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-6 shadow-inner">
-                <i class="fa-solid fa-check"></i>
+            <!-- NAGY LOGÓ A KÖSZÖNÖM MODALBAN -->
+            <div class="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-korpus-accent shadow-xl bg-white flex items-center justify-center mx-auto mb-6">
+                <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Logo" class="w-full h-full object-cover">
             </div>
 
             <div class="space-y-4">
-                <span class="text-xs uppercase tracking-[0.25em] text-korpus-accent font-bold" data-i18n="ty_tag">Sikeres tranzakció</span>
+                <span class="text-xs uppercase tracking-[0.25em] text-korpus-accent font-bold" data-i18n="ty_tag">Sikeres időpontfoglalás</span>
                 <h3 class="font-serif text-3xl md:text-4xl font-bold text-korpus-dark" data-i18n="ty_title">Köszönjük a foglalást!</h3>
                 <p class="text-korpus/80 font-light text-sm md:text-base leading-relaxed" data-i18n="ty_desc">
                     Örömmel várjuk a Korpus Balaton Massage stúdiójában Balatonfüreden vagy Csopakon. A részleteket és a visszaigazolást elküldtük az e-mail címére.
@@ -444,7 +445,7 @@
                     <span data-i18n="ty_btn_home">Vissza a főoldalra</span>
                 </button>
                 <a href="tel:+36701725509" class="flex-1 py-4 rounded-full bg-korpus-accent text-korpus-dark font-bold text-xs uppercase tracking-wider hover:bg-korpus-accentHover transition inline-flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-phone"></i> <span data-i18n="ty_btn_call">Ügyfélszolgálat</span>
+                    <i class="fa-solid fa-phone"></i> <span data-i18n="ty_btn_call">Klemens Ádám</span>
                 </a>
             </div>
         </div>
@@ -514,12 +515,10 @@
             }
         });
 
-        // Minup üzenetek figyelése: Ha a foglalás sikeresen lezajlott vagy átirányítana, automatikusan bezárja a keretet és felugrasztja a Köszönjük modalt!
         window.addEventListener('message', (event) => { 
             if (event.origin !== "https://app.minup.io") return; 
             const data = event.data; 
             
-            // Ha a minup küld valamilyen sikeres foglalási/tranzakciós üzenetet
             if (data && (data.type === "booking_success" || data.type === "success" || data.action === "success")) {
                 closeBookingModal();
                 openThankYouModal();
@@ -574,15 +573,15 @@
                 widget_desc: "Válassza ki az Önnek legmegfelelőbb szolgáltatást és időpontot kényelmesen, néhány kattintással a Minup rendszerünkben.",
                 badge_slots_text: "Szabad időpontok elérhetők",
                 modal_btn_text: "Időpontfoglalás indítása",
-                thankyou_test_btn: "Köszönjük a foglalást nézet tesztje",
+                thankyou_test_btn: "Sikeres foglalás tesztelése",
                 modal_header_title: "Korpus Balaton Foglalás",
-                ty_tag: "Sikeres tranzakció",
+                ty_tag: "Sikeres időpontfoglalás",
                 ty_title: "Köszönjük a foglalást!",
                 ty_desc: "Örömmel várjuk a Korpus Balaton Massage stúdiójában Balatonfüreden vagy Csopakon. A részleteket és a visszaigazolást elküldtük az e-mail címére.",
                 ty_info_location: "Helyszín: Lélekpart Stúdió (Balatonfüred / Csopak)",
                 ty_info_parking: "Ingyenes parkolási lehetőséggel várjuk",
                 ty_btn_home: "Vissza a főoldalra",
-                ty_btn_call: "Ügyfélszolgálat"
+                ty_btn_call: "Klemens Ádám"
             },
             en: {
                 header_subtitle: "Massage",
@@ -627,15 +626,15 @@
                 widget_desc: "Choose your preferred service and time conveniently with just a few clicks in our Minup system.",
                 badge_slots_text: "Available slots open",
                 modal_btn_text: "Start Booking",
-                thankyou_test_btn: "Test Booking Success View",
+                thankyou_test_btn: "Test Booking Success",
                 modal_header_title: "Korpus Balaton Booking",
-                ty_tag: "Successful Transaction",
+                ty_tag: "Successful Appointment",
                 ty_title: "Thank you for your booking!",
                 ty_desc: "We look forward to welcoming you at the Korpus Balaton Massage studio in Balatonfüred or Csopak. Details have been sent to your email.",
                 ty_info_location: "Location: Lélekpart Studio (Balatonfüred / Csopak)",
                 ty_info_parking: "Free parking available",
                 ty_btn_home: "Back to Home",
-                ty_btn_call: "Customer Service"
+                ty_btn_call: "Ádám Klemens"
             },
             de: {
                 header_subtitle: "Massage",
@@ -663,7 +662,7 @@
                 service_2_name: "Rücken-, Schulter- und Nacken-Schwedische Massage",
                 service_3_time: "90 Min.",
                 service_3_name: "Ganzkörpermassage",
-                service_4_time: "25 Min.",
+                service_4_time: "50 Min.",
                 service_4_name: "Massage einer Körperregion kombiniert mit kurzer Beratung",
                 service_5_time: "50 Min.",
                 service_5_name: "Massage betroffener Körperregionen kombiniert mit ausführlicher Beratung",
@@ -680,15 +679,15 @@
                 widget_desc: "Wählen Sie Ihren gewünschten Service und Termin bequem mit wenigen Klicks in unserem Minup-System.",
                 badge_slots_text: "Verfügbare Termine offen",
                 modal_btn_text: "Terminbuchung starten",
-                thankyou_test_btn: "Erfolgsansicht testen",
+                thankyou_test_btn: "Buchungserfolg testen",
                 modal_header_title: "Korpus Balaton Buchung",
-                ty_tag: "Erfolgreiche Transaktion",
+                ty_tag: "Erfolgreicher Termin",
                 ty_title: "Vielen Dank für Ihre Buchung!",
-                ty_desc: "Wir freuen uns, Sie im Korpus Balaton Massage Studio in Balatonfüred oder Csopak begrüßen zu dürfen. Details wurden an Ihre E-Mail gesendet.",
+                ty_desc: "Wir freuen uns darauf, Sie im Korpus Balaton Massage Studio in Balatonfüred oder Csopak begrüßen zu dürfen. Die Details wurden an Ihre E-Mail gesendet.",
                 ty_info_location: "Standort: Lélekpart Studio (Balatonfüred / Csopak)",
                 ty_info_parking: "Kostenlose Parkplätze stehen zur Verfügung",
                 ty_btn_home: "Zurück zur Startseite",
-                ty_btn_call: "Kundendienst"
+                ty_btn_call: "Ádám Klemens"
             }
         };
 
