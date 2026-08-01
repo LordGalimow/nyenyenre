@@ -47,7 +47,7 @@
             font-family: 'Cormorant Garamond', serif;
         }
         .hero-bg {
-            background-image: linear-gradient(to bottom, rgba(15, 26, 21, 0.65), rgba(15, 26, 21, 0.85)), url('images/1000006458.jpg');
+            background-image: linear-gradient(to bottom, rgba(15, 26, 21, 0.7), rgba(15, 26, 21, 0.88)), url('images/1000006458.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -74,7 +74,7 @@
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             <!-- Logo / Brand -->
             <a href="#" class="flex items-center gap-4 group">
-                <div class="w-14 h-14 rounded-full overflow-hidden border border-korpus-accent/40 shadow-sm bg-korpus flex items-center justify-center group-hover:border-korpus-accent transition duration-300">
+                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-korpus-accent shadow-md bg-korpus flex items-center justify-center group-hover:scale-105 transition duration-300">
                     <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Logo" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col">
@@ -125,6 +125,11 @@
     <!-- HERO SECTION -->
     <section class="hero-bg pt-48 pb-36 md:pt-64 md:pb-48 px-6 text-white relative flex items-center justify-center">
         <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+            <!-- Hero logó elem ismételt kiemelésként -->
+            <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-korpus-accent shadow-gold mx-auto bg-korpus flex items-center justify-center p-1 transform hover:rotate-6 transition duration-500">
+                <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Címer" class="w-full h-full object-cover rounded-full">
+            </div>
+
             <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold tracking-[0.2em] uppercase text-korpus-accent shadow-lg">
                 <i class="fa-solid fa-spa"></i> <span data-i18n="hero_badge">Prémium Wellness & Rehabilitáció</span>
             </div>
@@ -148,17 +153,17 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION + BRAND LOGO SHOWCASE -->
-    <section id="about" class="py-28 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="space-y-6">
-                <div class="space-y-3">
-                    <span class="text-xs uppercase tracking-[0.2em] text-korpus-accent font-bold" data-i18n="about_tag">Filozófiánk</span>
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold" data-i18n="about_title">Dióhéjban</h2>
-                    <div class="w-16 h-0.5 bg-korpus-accent"></div>
-                </div>
+    <!-- ABOUT SECTION (Tiszta, elegáns szöveges elrendezés) -->
+    <section id="about" class="py-28 px-6 max-w-5xl mx-auto">
+        <div class="space-y-16">
+            <div class="text-center space-y-3">
+                <span class="text-xs uppercase tracking-[0.2em] text-korpus-accent font-bold" data-i18n="about_tag">Filozófiánk</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold" data-i18n="about_title">Dióhéjban</h2>
+                <div class="w-16 h-0.5 bg-korpus-accent mx-auto"></div>
+            </div>
 
-                <div class="space-y-4 text-lg text-korpus/90 leading-relaxed font-light">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-lg text-korpus/90 leading-relaxed font-light">
                     <p>
                         <strong class="font-semibold text-korpus" data-i18n="about_p1_strong">A Korpus Balaton Massage alapítója Klemens Ádám</strong> <span data-i18n="about_p1">rehabilitációs terapeuta, gyógymasszőr. Több mint 20 éve foglalkozik az emberi szervezet teljességének fizikális, lelki és szellemi támogatásával.</span>
                     </p>
@@ -169,34 +174,13 @@
                         Tökéletes megoldás a felborult testi egyensúly visszaállítására, a stressz elengedésére, a fizikális felépülés támogatására, a fájdalom csökkentésére, valamint az ülő- vagy állómunka okozta terhelések felszabadítására. Kezeléseinket teljesen a páciensek egyedi igényeire szabjuk.
                     </p>
                 </div>
-            </div>
 
-            <div class="space-y-6">
-                <!-- Márkakártya a logóval -->
-                <div class="bg-korpus text-white p-8 md:p-10 rounded-3xl shadow-2xl border border-korpus-accent/30 relative overflow-hidden flex flex-col items-center text-center space-y-6">
-                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-korpus-accent/20 rounded-full blur-3xl"></div>
-                    
-                    <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-korpus-accent shadow-gold bg-korpus-dark flex items-center justify-center p-1 relative z-10 transform hover:scale-105 transition duration-500">
-                        <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Címeres Logo" class="w-full h-full object-cover rounded-full">
-                    </div>
-
-                    <div class="space-y-2 relative z-10">
-                        <h3 class="font-serif text-3xl font-bold tracking-wide text-korpus-accent">Korpus Balaton</h3>
-                        <p class="text-xs uppercase tracking-[0.3em] text-white/70 font-semibold" data-i18n="logo_card_subtitle">Professional Massage & Therapy</p>
-                    </div>
-
-                    <p class="text-sm text-white/80 font-light max-w-sm leading-relaxed relative z-10" data-i18n="logo_card_desc">
-                        Ahol a szakértelem és a Balaton parti nyugalom találkozik a testi-lelki megújulásért.
-                    </p>
-                </div>
-
-                <!-- Második kép kártya -->
-                <div class="relative overflow-hidden rounded-3xl shadow-luxury border border-korpus/10 h-64">
-                    <img src="images/1000006459.jpg" alt="Korpus Balaton Masszázs Szoba" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-korpus-dark/80 via-transparent to-transparent flex items-end p-6">
-                        <div class="text-white">
-                            <p class="font-serif text-2xl font-bold text-korpus-accent">20+</p>
-                            <p class="text-[10px] tracking-[0.2em] uppercase text-white/80" data-i18n="experience_text">Év szakmai tapasztalat</p>
+                <div class="relative overflow-hidden rounded-3xl shadow-luxury border border-korpus/10 h-96">
+                    <img src="images/1000006459.jpg" alt="Korpus Balaton Masszázs Szoba" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-korpus-dark/80 via-transparent to-transparent flex items-end p-8">
+                        <div class="text-white space-y-1">
+                            <p class="font-serif text-3xl font-bold text-korpus-accent">20+ Év</p>
+                            <p class="text-xs tracking-[0.2em] uppercase text-white/80" data-i18n="experience_text">Szakmai tapasztalat a gyógyításban</p>
                         </div>
                     </div>
                 </div>
@@ -224,7 +208,7 @@
                         <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                             8.500,- Ft
                         </div>
-                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider">
+                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider" aria-label="Foglalás">
                             <i class="fa-solid fa-calendar-plus"></i>
                         </button>
                     </div>
@@ -240,7 +224,7 @@
                         <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                             14.500,- Ft
                         </div>
-                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider">
+                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider" aria-label="Foglalás">
                             <i class="fa-solid fa-calendar-plus"></i>
                         </button>
                     </div>
@@ -256,7 +240,7 @@
                         <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                             22.000,- Ft
                         </div>
-                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider">
+                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider" aria-label="Foglalás">
                             <i class="fa-solid fa-calendar-plus"></i>
                         </button>
                     </div>
@@ -272,7 +256,7 @@
                         <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                             10.500,- Ft
                         </div>
-                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider">
+                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider" aria-label="Foglalás">
                             <i class="fa-solid fa-calendar-plus"></i>
                         </button>
                     </div>
@@ -288,11 +272,23 @@
                         <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                             18.500,- Ft
                         </div>
-                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider">
+                        <button onclick="openBookingModal()" class="px-4 py-3 bg-korpus text-korpus-accent rounded-xl hover:bg-korpus-accent hover:text-korpus-dark transition font-semibold text-xs uppercase tracking-wider" aria-label="Foglalás">
                             <i class="fa-solid fa-calendar-plus"></i>
                         </button>
                     </div>
                 </div>
+            </div>
+
+            <!-- Extra ajándékutalvány kiemelés -->
+            <div class="bg-korpus text-white p-8 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl border border-korpus-accent/30">
+                <div class="space-y-1 text-center sm:text-left">
+                    <span class="text-xs uppercase tracking-[0.2em] text-korpus-accent font-bold">Különleges ajándék</span>
+                    <h4 class="font-serif text-2xl font-bold">Ajándékozzon élményt és feltöltődést!</h4>
+                    <p class="text-xs text-white/70">Igényes ajándékutalványaink elérhetőek bármely szolgáltatásunkra.</p>
+                </div>
+                <a href="#contact" class="px-6 py-3 rounded-full bg-korpus-accent text-korpus-dark font-bold text-xs uppercase tracking-wider hover:bg-white transition whitespace-nowrap">
+                    Érdeklődöm
+                </a>
             </div>
         </div>
     </section>
@@ -376,7 +372,7 @@
     <!-- FULLSCREEN MODAL / FELUGRÓ ABLAK A MINUP FOGLALÁSHOZ -->
     <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-korpus-dark/90 backdrop-blur-xl flex items-center justify-center p-2 sm:p-6 overflow-hidden">
         <div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col relative h-[92vh] border border-korpus-accent/30 animate-in fade-in zoom-in duration-300">
-            <!-- Modal Header (Fix tetején) -->
+            <!-- Modal Header -->
             <div class="bg-korpus px-6 py-4 flex items-center justify-between text-white border-b border-korpus-accent/20 flex-shrink-0">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-full bg-korpus-accent text-korpus-dark flex items-center justify-center font-bold text-sm">
@@ -388,7 +384,7 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <!-- Modal Body - Nincs benne külön görgető, így a Minup saját sávja érvényesül teljes magasságban duplikáció nélkül -->
+            <!-- Modal Body -->
             <div class="flex-1 bg-korpus-bg overflow-hidden relative">
                 <iframe id="modal-minup-iframe" 
                         src="" 
@@ -460,9 +456,7 @@
                 about_p1: "rehabilitációs terapeuta, gyógymasszőr. Több mint 20 éve foglalkozik az emberi szervezet teljességének fizikális, lelki és szellemi támogatásával.",
                 about_p2: "A Korpus Balaton Massage egyéni konzultációt és professzionális masszázskezeléseket ajánl a Balaton északi partján, Balatonfüreden és Csopakon.",
                 about_p3: "Tökéletes megoldás a felborult testi egyensúly visszaállítására, a stressz elengedésére, a fizikális felépülés támogatására, a fájdalom csökkentésére, valamint az ülő- vagy állómunka okozta terhelések felszabadítására. Kezeléseinket teljesen a páciensek egyedi igényeire szabjuk.",
-                experience_text: "Év szakmai tapasztalat",
-                logo_card_subtitle: "Professional Massage & Therapy",
-                logo_card_desc: "Ahol a szakértelem és a Balaton parti nyugalom találkozik a testi-lelki megújulásért.",
+                experience_text: "Szakmai tapasztalat a gyógyításban",
                 services_tag: "Befektetés az egészségbe",
                 services_title: "Szolgáltatásaink és bruttó áraink",
                 service_1_time: "25 perc",
@@ -505,9 +499,7 @@
                 about_p1: "rehabilitation therapist and medical massage therapist. For over 20 years, he has been dedicated to supporting the physical, mental, and spiritual wholeness of the human body.",
                 about_p2: "Korpus Balaton Massage offers individual consultations and professional massage treatments on the northern shore of Lake Balaton, in Balatonfüred and Csopak.",
                 about_p3: "It is the perfect solution for restoring disrupted body balance, releasing stress, supporting physical recovery, managing and reducing pain, and relieving strain caused by sedentary or standing work. Treatments are tailored to the individual needs of patients.",
-                experience_text: "Years of Experience",
-                logo_card_subtitle: "Professional Massage & Therapy",
-                logo_card_desc: "Where expertise and lakeside tranquility meet for physical and mental renewal.",
+                experience_text: "Years of Experience in Healing",
                 services_tag: "Investment in Health",
                 services_title: "Our Services & Gross Prices",
                 service_1_time: "25 mins",
@@ -550,9 +542,7 @@
                 about_p1: "Rehabilitationstherapeut und Heilmasseur. Seit über 20 Jahren widmet er sich der physischen, mentalen und seelischen Unterstützung der Ganzheit des menschlichen Körpers.",
                 about_p2: "Korpus Balaton Massage bietet individuelle Beratungen und professionelle Massagebehandlungen am Nordufer des Plattensees in Balatonfüred und Csopak an.",
                 about_p3: "Es ist die perfekte Lösung zur Wiederherstellung des gestörten Körpergleichgewichts, zum Stressabbau, zur Unterstützung der körperlichen Genesung, zur Schmerzbehandlung und -linderung sowie zur Entlastung bei Sitz- oder Steharbeit. Die Behandlungen werden auf die individuellen Bedürfnisse der Patienten zugeschnitten.",
-                experience_text: "Jahre Berufserfahrung",
-                logo_card_subtitle: "Professional Massage & Therapy",
-                logo_card_desc: "Wo Fachkompetenz und Seeufer-Ruhe für körperliche und geistige Erneuerung zusammentreffen.",
+                experience_text: "Jahre Berufserfahrung in der Heilung",
                 services_tag: "Investition in die Gesundheit",
                 services_title: "Unsere Leistungen & Bruttopreise",
                 service_1_time: "25 Min.",
