@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Korpus Balaton Massage | Ultra-Luxury Wellness & Therapy</title>
-    <!-- Favicon (Tab ikon) - Javítva JPG-re és szóköz nélkülire -->
+    <meta name="description" content="Prémium masszázs és rehabilitációs kezelések Balatonfüreden és Csopakon a Lélekpart Stúdióban.">
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="images/Submark_logo_modified.jpg">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,8 +20,13 @@
                             light: '#2d4d3e',
                             bg: '#fbf9f5',
                             card: '#f4f0ea',
-                            accent: '#c5a059' // Prémium arany tónus
+                            accent: '#c5a059', // Prémium arany tónus
+                            accentHover: '#d4b26f'
                         }
+                    },
+                    boxShadow: {
+                        'luxury': '0 20px 40px -15px rgba(28, 49, 39, 0.07)',
+                        'gold': '0 10px 30px -10px rgba(197, 160, 89, 0.3)'
                     }
                 }
             }
@@ -45,6 +51,20 @@
             background-size: cover;
             background-position: center;
         }
+        /* Egyedi görgetősáv stílus */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5a059;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1c3127;
+        }
     </style>
 </head>
 <body class="bg-korpus-bg text-korpus antialiased selection:bg-korpus-accent selection:text-white">
@@ -54,52 +74,51 @@
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             <!-- Logo / Brand -->
             <a href="#" class="flex items-center gap-3.5 group">
-                <div class="w-12 h-12 rounded-full overflow-hidden border border-korpus-accent/40 shadow-sm bg-korpus flex items-center justify-center">
-                    <!-- Fejléc logó útvonal javítva -->
+                <div class="w-12 h-12 rounded-full overflow-hidden border border-korpus-accent/40 shadow-sm bg-korpus flex items-center justify-center group-hover:border-korpus-accent transition duration-300">
                     <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Logo" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-serif text-2xl font-bold tracking-wide">Korpus Balaton</span>
-                    <span class="text-[9px] tracking-[0.25em] uppercase text-korpus-accent -mt-1 font-semibold">Massage & Therapy</span>
+                    <span class="font-serif text-2xl font-bold tracking-wide group-hover:text-korpus-accent transition duration-300">Korpus Balaton</span>
+                    <span class="text-[9px] tracking-[0.25em] uppercase text-korpus-accent -mt-1 font-semibold" data-i18n="header_subtitle">Massage</span>
                 </div>
             </a>
 
             <!-- Desktop Menu & Language Switcher -->
             <div class="hidden md:flex items-center gap-10">
                 <nav class="flex items-center gap-8 font-medium text-sm tracking-wide">
-                    <a href="#about" data-i18n="nav_about" class="hover:text-korpus-accent transition">Rólunk</a>
-                    <a href="#services" data-i18n="nav_services" class="hover:text-korpus-accent transition">Szolgáltatások & Árak</a>
-                    <a href="#gallery" data-i18n="nav_gallery" class="hover:text-korpus-accent transition">Galéria</a>
-                    <a href="#contact" data-i18n="nav_contact" class="hover:text-korpus-accent transition">Kapcsolat</a>
+                    <a href="#about" data-i18n="nav_about" class="hover:text-korpus-accent transition duration-200">Rólunk</a>
+                    <a href="#services" data-i18n="nav_services" class="hover:text-korpus-accent transition duration-200">Szolgáltatások & Árak</a>
+                    <a href="#gallery" data-i18n="nav_gallery" class="hover:text-korpus-accent transition duration-200">Galéria</a>
+                    <a href="#contact" data-i18n="nav_contact" class="hover:text-korpus-accent transition duration-200">Kapcsolat</a>
                 </nav>
 
                 <!-- Language Switcher -->
                 <div class="flex items-center bg-korpus-card border border-korpus/10 rounded-full p-1 text-xs font-semibold shadow-inner">
-                    <button onclick="setLanguage('hu')" id="btn-hu" class="px-3 py-1.5 rounded-full transition bg-korpus text-white shadow-sm">HU</button>
-                    <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark">EN</button>
-                    <button onclick="setLanguage('de')" id="btn-de" class="px-3 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark">DE</button>
+                    <button onclick="setLanguage('hu')" id="btn-hu" class="px-3.5 py-1.5 rounded-full transition bg-korpus text-white shadow-sm">HU</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-3.5 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark">EN</button>
+                    <button onclick="setLanguage('de')" id="btn-de" class="px-3.5 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark">DE</button>
                 </div>
             </div>
 
             <!-- Mobile Menu Button -->
             <div class="flex items-center md:hidden gap-4">
                 <div class="flex items-center bg-korpus-card border border-korpus/10 rounded-full p-0.5 text-[10px] font-semibold">
-                    <button onclick="setLanguage('hu')" id="mob-btn-hu" class="px-2 py-1 rounded-full bg-korpus text-white">HU</button>
-                    <button onclick="setLanguage('en')" id="mob-btn-en" class="px-2 py-1 rounded-full text-korpus">EN</button>
-                    <button onclick="setLanguage('de')" id="mob-btn-de" class="px-2 py-1 rounded-full text-korpus">DE</button>
+                    <button onclick="setLanguage('hu')" id="mob-btn-hu" class="px-2.5 py-1 rounded-full bg-korpus text-white">HU</button>
+                    <button onclick="setLanguage('en')" id="mob-btn-en" class="px-2.5 py-1 rounded-full text-korpus">EN</button>
+                    <button onclick="setLanguage('de')" id="mob-btn-de" class="px-2.5 py-1 rounded-full text-korpus">DE</button>
                 </div>
-                <button onclick="toggleMobileMenu()" class="text-korpus text-2xl focus:outline-none">
+                <button onclick="toggleMobileMenu()" class="text-korpus text-2xl focus:outline-none p-1" aria-label="Menü">
                     <i id="menu-icon" class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-korpus-bg border-b border-korpus/10 px-6 py-6 space-y-4 shadow-xl">
-            <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about" class="block font-medium text-lg">Rólunk</a>
-            <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav_services" class="block font-medium text-lg">Szolgáltatások & Árak</a>
-            <a href="#gallery" onclick="toggleMobileMenu()" data-i18n="nav_gallery" class="block font-medium text-lg">Galéria</a>
-            <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_contact" class="block font-medium text-lg">Kapcsolat</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-korpus-bg/95 backdrop-blur-lg border-b border-korpus/10 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about" class="block font-medium text-lg hover:text-korpus-accent transition">Rólunk</a>
+            <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav_services" class="block font-medium text-lg hover:text-korpus-accent transition">Szolgáltatások & Árak</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" data-i18n="nav_gallery" class="block font-medium text-lg hover:text-korpus-accent transition">Galéria</a>
+            <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav_contact" class="block font-medium text-lg hover:text-korpus-accent transition">Kapcsolat</a>
         </div>
     </header>
 
@@ -119,7 +138,7 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                <a href="#contact" class="w-full sm:w-auto px-9 py-4 rounded-full bg-korpus-accent text-korpus-dark font-bold shadow-2xl hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 tracking-wide">
+                <a href="#contact" class="w-full sm:w-auto px-9 py-4 rounded-full bg-korpus-accent text-korpus-dark font-bold shadow-gold hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 tracking-wide transform hover:-translate-y-0.5">
                     <i class="fa-solid fa-calendar-check"></i> <span data-i18n="cta_book">Bejelentkezés</span>
                 </a>
                 <a href="#services" class="w-full sm:w-auto px-9 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 font-medium text-white hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3 tracking-wide">
@@ -153,7 +172,7 @@
                 </div>
             </div>
 
-            <!-- Jobb oldal: Valós stúdió belső kép -->
+            <!-- Jobb oldal: Kép -->
             <div class="relative">
                 <div class="absolute -inset-4 bg-korpus-accent/15 rounded-3xl blur-2xl -z-10"></div>
                 <img src="images/1000006459.jpg" alt="Korpus Balaton Masszázs Szoba" class="rounded-3xl shadow-2xl object-cover w-full h-[480px] border border-korpus/10">
@@ -176,56 +195,56 @@
 
             <div class="grid gap-6">
                 <!-- Service Item 1 -->
-                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-luxury hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transform hover:-translate-y-1">
                     <div class="space-y-1.5">
                         <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-korpus-accent bg-korpus/5 px-3 py-1 rounded-md" data-i18n="service_1_time">25 perc</span>
                         <h3 class="font-serif text-2xl font-bold pt-1" data-i18n="service_1_name">Hátmasszázs</h3>
                     </div>
-                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner">
+                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                         8.500,- Ft
                     </div>
                 </div>
 
                 <!-- Service Item 2 -->
-                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-luxury hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transform hover:-translate-y-1">
                     <div class="space-y-1.5">
                         <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-korpus-accent bg-korpus/5 px-3 py-1 rounded-md" data-i18n="service_2_time">50 perc</span>
                         <h3 class="font-serif text-2xl font-bold pt-1" data-i18n="service_2_name">Hát, vállöv és nyak svédmasszázs</h3>
                     </div>
-                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner">
+                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                         14.500,- Ft
                     </div>
                 </div>
 
                 <!-- Service Item 3 -->
-                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-luxury hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transform hover:-translate-y-1">
                     <div class="space-y-1.5">
                         <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-korpus-accent bg-korpus/5 px-3 py-1 rounded-md" data-i18n="service_3_time">90 perc</span>
                         <h3 class="font-serif text-2xl font-bold pt-1" data-i18n="service_3_name">Teljes test masszázs</h3>
                     </div>
-                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner">
+                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                         22.000,- Ft
                     </div>
                 </div>
 
                 <!-- Service Item 4 -->
-                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-luxury hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transform hover:-translate-y-1">
                     <div class="space-y-1.5">
                         <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-korpus-accent bg-korpus/5 px-3 py-1 rounded-md" data-i18n="service_4_time">25 perc</span>
                         <h3 class="font-serif text-2xl font-bold pt-1" data-i18n="service_4_name">Tömör konzultációval egybekötött, egy testtáj masszázsa</h3>
                     </div>
-                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner">
+                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                         10.500,- Ft
                     </div>
                 </div>
 
                 <!-- Service Item 5 -->
-                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-sm hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="bg-white p-7 md:p-8 rounded-2xl border border-korpus/10 shadow-luxury hover:shadow-xl hover:border-korpus-accent/40 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transform hover:-translate-y-1">
                     <div class="space-y-1.5">
                         <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-korpus-accent bg-korpus/5 px-3 py-1 rounded-md" data-i18n="service_5_time">50 perc</span>
                         <h3 class="font-serif text-2xl font-bold pt-1" data-i18n="service_5_name">Bővebb konzultációval egybekötött, érintett testtájak masszázsa</h3>
                     </div>
-                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner">
+                    <div class="text-2xl font-serif font-bold text-korpus-dark bg-korpus-bg px-6 py-3 rounded-xl border border-korpus/10 shadow-inner whitespace-nowrap">
                         18.500,- Ft
                     </div>
                 </div>
@@ -242,16 +261,13 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- 1. Stúdió kép: Részlet / Só lámpa -->
-            <div class="overflow-hidden rounded-2xl shadow-lg group h-80 border border-korpus/10">
+            <div class="overflow-hidden rounded-2xl shadow-luxury group h-80 border border-korpus/10">
                 <img src="images/1000006458.jpg" alt="Stúdió részlet és hangulatvilágítás" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             </div>
-            <!-- 2. Stúdió külső bejárat az Ádám gyógymasszőr táblával -->
-            <div class="overflow-hidden rounded-2xl shadow-lg group h-80 border border-korpus/10">
+            <div class="overflow-hidden rounded-2xl shadow-luxury group h-80 border border-korpus/10">
                 <img src="images/3327.jpg" alt="Lélekpart Stúdió bejárata - Ádám Gyógymasszőr" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             </div>
-            <!-- 3. Stúdió kép: Kilátás / Nyitott ajtó -->
-            <div class="overflow-hidden rounded-2xl shadow-lg group h-80 border border-korpus/10">
+            <div class="overflow-hidden rounded-2xl shadow-luxury group h-80 border border-korpus/10">
                 <img src="images/1000006462.jpg" alt="Stúdió kitekintéssel a Balaton-parti környezetre" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             </div>
         </div>
@@ -260,7 +276,7 @@
     <!-- CONTACT & BOOKING SECTION -->
     <section id="contact" class="py-28 bg-korpus text-white px-6 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:20px_20px]"></div>
-        <div class="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+        <div class="max-w-5xl mx-auto text-center space-y-12 relative z-10">
             <div class="space-y-3">
                 <span class="text-xs uppercase tracking-[0.2em] text-korpus-accent font-bold" data-i18n="contact_tag">Időpontfoglalás</span>
                 <h2 class="font-serif text-4xl md:text-5xl font-bold" data-i18n="contact_title">Bejelentkezés</h2>
@@ -270,7 +286,6 @@
 
             <!-- Elérhetőségek & Facebook gomb -->
             <div class="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-                <!-- Phone -->
                 <a href="tel:+36701725509" class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-korpus-accent/50 transition-all duration-300 flex flex-col items-center gap-4 group shadow-xl">
                     <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-phone"></i>
@@ -279,7 +294,6 @@
                     <span class="font-serif text-lg font-bold tracking-wide">+36 70 172 5509</span>
                 </a>
 
-                <!-- Email -->
                 <a href="mailto:bejelentkezeses@korpusbalaton.hu" class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-korpus-accent/50 transition-all duration-300 flex flex-col items-center gap-4 group shadow-xl">
                     <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-envelope"></i>
@@ -288,7 +302,6 @@
                     <span class="font-medium text-sm break-all">bejelentkezeses@korpusbalaton.hu</span>
                 </a>
 
-                <!-- Facebook -->
                 <a href="https://www.facebook.com/share/1EdszgX5GW/" target="_blank" rel="noopener noreferrer" class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-korpus-accent/50 transition-all duration-300 flex flex-col items-center gap-4 group shadow-xl">
                     <div class="w-14 h-14 rounded-full bg-korpus-accent/20 text-korpus-accent flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-brands fa-facebook-f"></i>
@@ -298,32 +311,67 @@
                 </a>
             </div>
 
-            <!-- IDŐPONTFOGLALÓ WIDGET -->
-            <div class="mt-12 bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl max-w-2xl mx-auto text-center space-y-4 shadow-xl">
-                <h3 class="font-serif text-2xl font-bold text-korpus-accent" data-i18n="widget_title">Online Időpontfoglalás</h3>
-                <p class="text-sm text-white/70 font-light" data-i18n="widget_desc">Foglalja le időpontját egyszerűen online:</p>
-                <div class="p-2 bg-white rounded-2xl border border-white/10 overflow-hidden shadow-inner text-left">
-                    <iframe src="https://app.minup.io/embed/korpus-balaton-massage/services?canStartPayment=true" style="width: 100%; height: 590px; max-width: 100%;" frameBorder="0"></iframe>
-                    <script type="text/javascript">
-                    window.addEventListener("message", (event) => { if (event.origin !== "https://app.minup.io") return; const data = event.data; if (data.type === "redirect_to_payment") { window.location.href = data.url; } });
-                    </script>
+            <!-- PRÉMIUM IDŐPONTFOGLALÓ WIDGET KONTÉNER (Dinamikusan méreteződő, görgetésmentes Iframe) -->
+            <div class="mt-16 bg-white/5 backdrop-blur-xl border border-korpus-accent/30 p-4 md:p-8 rounded-3xl max-w-4xl mx-auto text-center space-y-6 shadow-2xl relative">
+                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-48 h-12 bg-korpus-accent/20 blur-2xl rounded-full -z-10"></div>
+                
+                <div class="space-y-2">
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-korpus-accent font-semibold" data-i18n="widget_badge">Gyors és kényelmes</span>
+                    <h3 class="font-serif text-3xl font-bold text-white" data-i18n="widget_title">Online Időpontfoglalás</h3>
+                    <p class="text-sm text-white/70 font-light max-w-md mx-auto" data-i18n="widget_desc">Válassza ki az Ön számára legmegfelelőbb időpontot és kezelést:</p>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-inner border border-white/10 text-left w-full">
+                    <iframe id="minup-iframe" 
+                            src="https://app.minup.io/embed/korpus-balaton-massage/services?canStartPayment=true" 
+                            style="width: 100%; min-height: 680px; max-width: 100%; border: none; display: block;" 
+                            onload="resizeIframe(this)"
+                            scrolling="no">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-8 bg-korpus-dark text-white/50 text-xs px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer class="py-10 bg-korpus-dark text-white/50 text-xs px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <p>&copy; 2026 Korpus Balaton Massage. All rights reserved.</p>
-            <p class="text-[10px] text-korpus-accent font-semibold tracking-[0.25em] uppercase">Ultra-Luxury Wellness Architecture</p>
+            <a href="#" class="text-korpus-accent hover:text-white transition uppercase text-[10px] tracking-[0.2em] font-semibold flex items-center gap-2">
+                <span>Vissza a tetejére</span> <i class="fa-solid fa-arrow-up"></i>
+            </a>
+            <p class="text-[10px] text-korpus-accent/70 font-semibold tracking-[0.25em] uppercase">Ultra-Luxury Wellness Architecture</p>
         </div>
     </footer>
 
-    <!-- TRANSLATION SCRIPT -->
+    <!-- INTERAKTÍV ESZKÖZÖK ÉS NYELVI SKRIPT -->
     <script>
+        // Minup iframe automatikus magasság-igazítása görgetés ellen
+        function resizeIframe(obj) {
+            try {
+                obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+            } catch (e) {
+                // Cross-origin fallback abban az esetben, ha a böngésző blokkolja az automatikus mérést
+                obj.style.height = "750px";
+            }
+        }
+
+        window.addEventListener("message", (event) => { 
+            if (event.origin !== "https://app.minup.io") return; 
+            const data = event.data; 
+            if (data.type === "redirect_to_payment") { 
+                window.location.href = data.url; 
+            } 
+            // Magasság frissítése, ha a Minup küld méret-eseményt
+            if (data.height && document.getElementById("minup-iframe")) {
+                document.getElementById("minup-iframe").style.height = (data.height + 30) + "px";
+            }
+        });
+
+        // Fordítások
         const translations = {
             hu: {
+                header_subtitle: "Massage",
                 nav_about: "Rólunk",
                 nav_services: "Szolgáltatások & Árak",
                 nav_gallery: "Galéria",
@@ -360,10 +408,12 @@
                 contact_email_label: "Email cím",
                 contact_fb_label: "Kövessen minket",
                 contact_fb_text: "Facebook oldal",
+                widget_badge: "Gyors és kényelmes",
                 widget_title: "Online Időpontfoglalás",
-                widget_desc: "Foglalja le időpontját egyszerűen online:"
+                widget_desc: "Válassza ki az Ön számára legmegfelelőbb időpontot és kezelést:"
             },
             en: {
+                header_subtitle: "Massage",
                 nav_about: "About Us",
                 nav_services: "Services & Prices",
                 nav_gallery: "Gallery",
@@ -400,10 +450,12 @@
                 contact_email_label: "Email Address",
                 contact_fb_label: "Follow Us",
                 contact_fb_text: "Facebook Page",
+                widget_badge: "Fast & Convenient",
                 widget_title: "Online Appointment Booking",
-                widget_desc: "Book your appointment easily online:"
+                widget_desc: "Choose the most suitable time and treatment for you:"
             },
             de: {
+                header_subtitle: "Massage",
                 nav_about: "Über uns",
                 nav_services: "Leistungen & Preise",
                 nav_gallery: "Galerie",
@@ -440,8 +492,9 @@
                 contact_email_label: "E-Mail-Adresse",
                 contact_fb_label: "Folgen Sie uns",
                 contact_fb_text: "Facebook-Seite",
+                widget_badge: "Schnell & Bequem",
                 widget_title: "Online-Terminvereinbarung",
-                widget_desc: "Buchen Sie Ihren Termin ganz einfach online:"
+                widget_desc: "Wählen Sie Ihren gewünschten Termin und Ihre Behandlung aus:"
             }
         };
 
@@ -450,11 +503,11 @@
                 const btn = document.getElementById(`btn-${l}`);
                 const mobBtn = document.getElementById(`mob-btn-${l}`);
                 if (l === lang) {
-                    if(btn) { btn.className = "px-3 py-1.5 rounded-full transition bg-korpus text-white shadow-sm"; }
-                    if(mobBtn) { mobBtn.className = "px-2 py-1 rounded-full bg-korpus text-white"; }
+                    if(btn) { btn.className = "px-3.5 py-1.5 rounded-full transition bg-korpus text-white shadow-sm"; }
+                    if(mobBtn) { mobBtn.className = "px-2.5 py-1 rounded-full bg-korpus text-white"; }
                 } else {
-                    if(btn) { btn.className = "px-3 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark"; }
-                    if(mobBtn) { mobBtn.className = "px-2 py-1 rounded-full text-korpus"; }
+                    if(btn) { btn.className = "px-3.5 py-1.5 rounded-full transition text-korpus hover:text-korpus-dark"; }
+                    if(mobBtn) { mobBtn.className = "px-2.5 py-1 rounded-full text-korpus"; }
                 }
             });
 
