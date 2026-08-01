@@ -74,7 +74,7 @@
     <!-- HEADER / NAVIGATION -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-korpus-bg/90 backdrop-blur-md border-b border-korpus/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <!-- Logo / Brand (Megnövelt méret: w-16 h-16) -->
+            <!-- Logo / Brand -->
             <a href="#" class="flex items-center gap-4 group">
                 <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-korpus-accent shadow-md bg-white flex items-center justify-center group-hover:scale-105 transition duration-300">
                     <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Logo" class="w-full h-full object-cover">
@@ -150,7 +150,7 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION (Kihúzva a 20+ éves szöveg) -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="py-28 px-6 max-w-5xl mx-auto">
         <div class="space-y-16">
             <div class="text-center space-y-3">
@@ -348,9 +348,8 @@
                 </a>
             </div>
 
-            <!-- ULTRA PRÉMIUM GOMBOS / MODAL INDÍTÓ KÁRTYA -->
+            <!-- FOGLALÁSI KÁRTYA -->
             <div class="mt-12 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border-2 border-korpus-accent p-8 md:p-14 rounded-[2.5rem] max-w-3xl mx-auto text-center space-y-8 shadow-2xl relative">
-                <!-- Automatikusan világító badge -->
                 <div id="availability-badge" class="hidden inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold tracking-wider uppercase">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> <span data-i18n="badge_slots_text">Szabad időpontok elérhetők</span>
                 </div>
@@ -360,7 +359,6 @@
                     <p class="text-white/80 font-light text-sm md:text-base max-w-lg mx-auto leading-relaxed" data-i18n="widget_desc">Válassza ki az Önnek legmegfelelőbb szolgáltatást és időpontot kényelmesen, néhány kattintással a Minup rendszerünkben.</p>
                 </div>
 
-                <!-- Bizalomerősítő kis ikonok / előnyök -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-xs text-white/70 border-t border-white/10 border-b py-6">
                     <div class="flex items-center justify-center gap-2">
                         <i class="fa-solid fa-bolt text-korpus-accent"></i> Azonnali visszaigazolás
@@ -377,19 +375,18 @@
                     <button onclick="openBookingModal()" class="w-full sm:w-auto px-10 py-5 rounded-full bg-korpus-accent text-korpus-dark font-bold text-base shadow-gold hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-3 tracking-wider uppercase transform hover:-translate-y-1">
                         <i class="fa-solid fa-calendar-check text-lg"></i> <span data-i18n="modal_btn_text">Időpontfoglalás indítása</span>
                     </button>
-                    <!-- Teszt Gomb a Köszönjük oldal megtekintéséhez -->
+                    <!-- Teszt Gomb a Köszönjük nézethez -->
                     <button onclick="openThankYouModal()" class="w-full sm:w-auto px-6 py-5 rounded-full bg-white/10 border border-white/30 text-white font-medium text-sm hover:bg-white/20 transition inline-flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-circle-check text-korpus-accent"></i> <span data-i18n="thankyou_test_btn">Sikeres vásárlás nézet tesztje</span>
+                        <i class="fa-solid fa-circle-check text-korpus-accent"></i> <span data-i18n="thankyou_test_btn">Köszönjük a foglalást nézet tesztje</span>
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FULLSCREEN MODAL / FELUGRÓ ABLAK A MINUP FOGLALÁSHOZ -->
+    <!-- FULLSCREEN MODAL / MINUP -->
     <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-korpus-dark/90 backdrop-blur-xl flex items-center justify-center p-2 sm:p-6 overflow-hidden">
         <div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col relative h-[92vh] border border-korpus-accent/30">
-            <!-- Modal Header -->
             <div class="bg-korpus px-6 py-4 flex items-center justify-between text-white border-b border-korpus-accent/20 flex-shrink-0">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-full bg-korpus-accent text-korpus-dark flex items-center justify-center font-bold text-sm">
@@ -401,7 +398,6 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <!-- Modal Body -->
             <div class="flex-1 bg-korpus-bg overflow-hidden relative">
                 <iframe id="modal-minup-iframe" 
                         src="" 
@@ -412,30 +408,26 @@
         </div>
     </div>
 
-    <!-- KÖSZÖNJÜK A VÁSÁRLÁST / FOGLALÁST MODAL (ÚJ FUNKCIÓ) -->
+    <!-- KÖSZÖNJÜK A FOGLALÁST MODAL -->
     <div id="thankyou-modal" class="fixed inset-0 z-50 hidden bg-korpus-dark/90 backdrop-blur-xl flex items-center justify-center p-4">
         <div class="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col relative p-8 md:p-12 text-center border-2 border-korpus-accent/40 animate-in fade-in zoom-in duration-300">
             
-            <!-- Bezáró gomb -->
             <button onclick="closeThankYouModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-korpus-bg hover:bg-korpus-card text-korpus flex items-center justify-center transition text-lg" aria-label="Bezárás">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Ikon animáció -->
             <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-6 shadow-inner">
                 <i class="fa-solid fa-check"></i>
             </div>
 
-            <!-- Tartalom -->
             <div class="space-y-4">
                 <span class="text-xs uppercase tracking-[0.25em] text-korpus-accent font-bold" data-i18n="ty_tag">Sikeres tranzakció</span>
-                <h3 class="font-serif text-3xl md:text-4xl font-bold text-korpus-dark" data-i18n="ty_title">Köszönjük a foglalást és a vásárlást!</h3>
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-korpus-dark" data-i18n="ty_title">Köszönjük a foglalást!</h3>
                 <p class="text-korpus/80 font-light text-sm md:text-base leading-relaxed" data-i18n="ty_desc">
                     Örömmel várjuk a Korpus Balaton Massage stúdiójában Balatonfüreden vagy Csopakon. A részleteket és a visszaigazolást elküldtük az e-mail címére.
                 </p>
             </div>
 
-            <!-- Információs doboz -->
             <div class="my-8 bg-korpus-bg p-5 rounded-2xl border border-korpus/10 text-xs text-korpus/70 space-y-2 text-left">
                 <div class="flex items-center gap-3">
                     <i class="fa-solid fa-location-dot text-korpus-accent text-sm"></i>
@@ -447,7 +439,6 @@
                 </div>
             </div>
 
-            <!-- Akció gombok -->
             <div class="flex flex-col sm:flex-row gap-3">
                 <button onclick="closeThankYouModal()" class="flex-1 py-4 rounded-full bg-korpus text-white font-bold text-xs uppercase tracking-wider hover:bg-korpus-light transition">
                     <span data-i18n="ty_btn_home">Vissza a főoldalra</span>
@@ -470,21 +461,18 @@
         </div>
     </footer>
 
-    <!-- INTERAKTÍV ESZKÖZÖK ÉS NYELVI SKRIPT -->
+    <!-- JAVASCRIPT -->
     <script>
-        // --- AUTOMATIKUS IDŐPONT ELLENŐRZŐ LOGIKA ---
         async function checkAvailableSlots() {
             const badge = document.getElementById('availability-badge');
             try {
-                const slotsAvailable = false; // Ha nincs szabad időpont, false
-
+                const slotsAvailable = false; 
                 if (slotsAvailable) {
                     badge.classList.remove('hidden');
                 } else {
                     badge.classList.add('hidden');
                 }
             } catch (error) {
-                console.error("Nem sikerült lekérni az időpont státuszt:", error);
                 badge.classList.add('hidden');
             }
         }
@@ -509,7 +497,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Köszönjük modal kezelése
         function openThankYouModal() {
             document.getElementById('thankyou-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -579,10 +566,10 @@
                 widget_desc: "Válassza ki az Önnek legmegfelelőbb szolgáltatást és időpontot kényelmesen, néhány kattintással a Minup rendszerünkben.",
                 badge_slots_text: "Szabad időpontok elérhetők",
                 modal_btn_text: "Időpontfoglalás indítása",
-                thankyou_test_btn: "Sikeres vásárlás nézet tesztje",
+                thankyou_test_btn: "Köszönjük a foglalást nézet tesztje",
                 modal_header_title: "Korpus Balaton Foglalás",
                 ty_tag: "Sikeres tranzakció",
-                ty_title: "Köszönjük a foglalást és a vásárlást!",
+                ty_title: "Köszönjük a foglalást!",
                 ty_desc: "Örömmel várjuk a Korpus Balaton Massage stúdiójában Balatonfüreden vagy Csopakon. A részleteket és a visszaigazolást elküldtük az e-mail címére.",
                 ty_info_location: "Helyszín: Lélekpart Stúdió (Balatonfüred / Csopak)",
                 ty_info_parking: "Ingyenes parkolási lehetőséggel várjuk",
@@ -632,10 +619,10 @@
                 widget_desc: "Choose your preferred service and time conveniently with just a few clicks in our Minup system.",
                 badge_slots_text: "Available slots open",
                 modal_btn_text: "Start Booking",
-                thankyou_test_btn: "Test Success View",
+                thankyou_test_btn: "Test Booking Success View",
                 modal_header_title: "Korpus Balaton Booking",
                 ty_tag: "Successful Transaction",
-                ty_title: "Thank you for your booking and purchase!",
+                ty_title: "Thank you for your booking!",
                 ty_desc: "We look forward to welcoming you at the Korpus Balaton Massage studio in Balatonfüred or Csopak. Details have been sent to your email.",
                 ty_info_location: "Location: Lélekpart Studio (Balatonfüred / Csopak)",
                 ty_info_parking: "Free parking available",
@@ -688,7 +675,7 @@
                 thankyou_test_btn: "Erfolgsansicht testen",
                 modal_header_title: "Korpus Balaton Buchung",
                 ty_tag: "Erfolgreiche Transaktion",
-                ty_title: "Vielen Dank für Ihre Buchung und Ihren Kauf!",
+                ty_title: "Vielen Dank für Ihre Buchung!",
                 ty_desc: "Wir freuen uns, Sie im Korpus Balaton Massage Studio in Balatonfüred oder Csopak begrüßen zu dürfen. Details wurden an Ihre E-Mail gesendet.",
                 ty_info_location: "Standort: Lélekpart Studio (Balatonfüred / Csopak)",
                 ty_info_parking: "Kostenlose Parkplätze stehen zur Verfügung",
