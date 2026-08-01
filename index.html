@@ -51,7 +51,6 @@
             background-size: cover;
             background-position: center;
         }
-        /* Egyedi, stílusos görgetősáv */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -72,9 +71,9 @@
     <!-- HEADER / NAVIGATION -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-korpus-bg/90 backdrop-blur-md border-b border-korpus/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <!-- Logo / Brand -->
+            <!-- Logo / Brand (Fehér háttérrel) -->
             <a href="#" class="flex items-center gap-4 group">
-                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-korpus-accent shadow-md bg-korpus flex items-center justify-center group-hover:scale-105 transition duration-300">
+                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-korpus-accent shadow-md bg-white flex items-center justify-center group-hover:scale-105 transition duration-300">
                     <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Logo" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col">
@@ -125,8 +124,8 @@
     <!-- HERO SECTION -->
     <section class="hero-bg pt-48 pb-36 md:pt-64 md:pb-48 px-6 text-white relative flex items-center justify-center">
         <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-            <!-- Hero logó elem ismételt kiemelésként -->
-            <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-korpus-accent shadow-gold mx-auto bg-korpus flex items-center justify-center p-1 transform hover:rotate-6 transition duration-500">
+            <!-- Hero logó elem fehér háttérrel -->
+            <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-korpus-accent shadow-gold mx-auto bg-white flex items-center justify-center p-1 transform hover:rotate-6 transition duration-500">
                 <img src="images/Submark_logo_modified.jpg" alt="Korpus Balaton Címer" class="w-full h-full object-cover rounded-full">
             </div>
 
@@ -153,7 +152,7 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION (Tiszta, elegáns szöveges elrendezés) -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="py-28 px-6 max-w-5xl mx-auto">
         <div class="space-y-16">
             <div class="text-center space-y-3">
@@ -351,18 +350,34 @@
                 </a>
             </div>
 
-            <!-- ULTRA PRÉMIUM GOMBOS / MODAL INDÍTÓ KÁRTYA -->
-            <div class="mt-12 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border-2 border-korpus-accent p-8 md:p-14 rounded-[2.5rem] max-w-3xl mx-auto text-center space-y-6 shadow-2xl">
-                <div class="w-20 h-20 bg-korpus-accent text-korpus-dark rounded-full flex items-center justify-center mx-auto text-3xl shadow-gold animate-pulse">
-                    <i class="fa-solid fa-calendar-check"></i>
+            <!-- ULTRA PRÉMIUM GOMBOS / MODAL INDÍTÓ KÁRTYA (Fokozott konverziós elemekkel) -->
+            <div class="mt-12 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border-2 border-korpus-accent p-8 md:p-14 rounded-[2.5rem] max-w-3xl mx-auto text-center space-y-8 shadow-2xl relative">
+                <!-- Élő státusz badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold tracking-wider uppercase">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Szabad időpontok elérhetők
                 </div>
-                <div class="space-y-2">
-                    <h3 class="font-serif text-3xl md:text-4xl font-bold text-white" data-i18n="widget_title">Online Időpontfoglalás</h3>
-                    <p class="text-white/80 font-light text-sm max-w-md mx-auto" data-i18n="widget_desc">Kattintson az alábbi gombra a teljes képernyős, zavartalan foglalási felület megnyitásához a Minup rendszerben.</p>
+
+                <div class="space-y-3">
+                    <h3 class="font-serif text-3xl md:text-5xl font-bold text-white" data-i18n="widget_title">Online Időpontfoglalás</h3>
+                    <p class="text-white/80 font-light text-sm md:text-base max-w-lg mx-auto leading-relaxed" data-i18n="widget_desc">Válassza ki az Önnek legmegfelelőbb szolgáltatást és időpontot kényelmesen, néhány kattintással a Minup rendszerünkben.</p>
                 </div>
+
+                <!-- Bizalomerősítő kis ikonok / előnyök -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-xs text-white/70 border-t border-white/10 border-b py-6">
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bolt text-korpus-accent"></i> Azonnali visszaigazolás
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-korpus-accent"></i> Biztonságos folyamat
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-clock-rotate-left text-korpus-accent"></i> Rugalmas kezelés
+                    </div>
+                </div>
+
                 <div>
-                    <button onclick="openBookingModal()" class="px-10 py-5 rounded-full bg-korpus-accent text-korpus-dark font-bold text-base shadow-gold hover:bg-white transition-all duration-300 inline-flex items-center gap-3 tracking-wider uppercase">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="modal_btn_text">Foglalási felület megnyitása</span>
+                    <button onclick="openBookingModal()" class="w-full sm:w-auto px-10 py-5 rounded-full bg-korpus-accent text-korpus-dark font-bold text-base shadow-gold hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-3 tracking-wider uppercase transform hover:-translate-y-1">
+                        <i class="fa-solid fa-calendar-check text-lg"></i> <span data-i18n="modal_btn_text">Időpontfoglalás indítása</span>
                     </button>
                 </div>
             </div>
@@ -424,7 +439,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // ESC gombos bezárás támogatása
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeBookingModal();
@@ -479,8 +493,8 @@
                 contact_fb_label: "Kövessen minket",
                 contact_fb_text: "Facebook oldal",
                 widget_title: "Online Időpontfoglalás",
-                widget_desc: "Kattintson az alábbi gombra a teljes képernyős, zavartalan foglalási felület megnyitásához a Minup rendszerben.",
-                modal_btn_text: "Foglalási felület megnyitása",
+                widget_desc: "Válassza ki az Önnek legmegfelelőbb szolgáltatást és időpontot kényelmesen, néhány kattintással a Minup rendszerünkben.",
+                modal_btn_text: "Időpontfoglalás indítása",
                 modal_header_title: "Korpus Balaton Foglalás"
             },
             en: {
@@ -522,8 +536,8 @@
                 contact_fb_label: "Follow Us",
                 contact_fb_text: "Facebook Page",
                 widget_title: "Online Appointment Booking",
-                widget_desc: "Click the button below to open the distraction-free full-screen booking interface in Minup.",
-                modal_btn_text: "Open Booking Interface",
+                widget_desc: "Choose your preferred service and time conveniently with just a few clicks in our Minup system.",
+                modal_btn_text: "Start Booking",
                 modal_header_title: "Korpus Balaton Booking"
             },
             de: {
@@ -565,8 +579,8 @@
                 contact_fb_label: "Folgen Sie uns",
                 contact_fb_text: "Facebook-Seite",
                 widget_title: "Online-Terminvereinbarung",
-                widget_desc: "Klicken Sie auf die Schaltfläche unten, um die ablenkungsfreie Vollbild-Buchungsoberfläche von Minup zu öffnen.",
-                modal_btn_text: "Buchungsoberfläche öffnen",
+                widget_desc: "Wählen Sie Ihren gewünschten Service und Termin bequem mit wenigen Klicks in unserem Minup-System.",
+                modal_btn_text: "Terminbuchung starten",
                 modal_header_title: "Korpus Balaton Buchung"
             }
         };
