@@ -285,7 +285,7 @@
     </section>
 
     <!-- GALLERY SECTION -->
-    <section id="gallery" class="py-20 md:py-28 px-6 max-w-7xl mx-auto space-y-10">
+    <<section id="gallery" class="py-20 md:py-28 px-6 max-w-7xl mx-auto space-y-10">
         <div class="text-center space-y-3">
             <span class="text-xs uppercase tracking-[0.2em] text-korpus-accent font-bold" data-i18n="gallery_tag">Hangulat</span>
             <h2 class="font-serif text-3xl md:text-4xl font-bold" data-i18n="gallery_title">A helyszín</h2>
@@ -505,16 +505,41 @@
             }
         });
 
+        // Továbbfejlesztett, univerzális Minup üzenetfigyelő
         window.addEventListener('message', (event) => { 
-            if (event.origin !== "https://app.minup.io") return; 
-            const data = event.data; 
+            if (!event.origin.includes("minup.io")) return; 
             
-            if (data && (data.type === "booking_success" || data.type === "success" || data.action === "success")) {
+            let data = event.data; 
+            
+            // Ha szövegként érkezik, megpróbáljuk JSON-né alakítani
+            if (typeof data === 'string') {
+                try {
+                    data = JSON.parse(data);
+                } catch (e) {
+                    // Ha egyszerű string és tartalmazza a "success" vagy "booked" szavakat
+                    if (data.toLowerCase().includes("success") || data.toLowerCase().includes("booked")) {
+                        closeBookingModal();
+                        openThankYouModal();
+                        return;
+                    }
+                }
+            }
+            
+            // Széleskörű ellenőrzés minden lehetséges Minup sikeres foglalási eseményre
+            if (data && (
+                data.type === "booking_success" || 
+                data.type === "success" || 
+                data.event === "booking_success" || 
+                data.event === "booked" || 
+                data.action === "success" || 
+                data.status === "success" ||
+                (data.message && typeof data.message === 'string' && data.message.toLowerCase().includes("success"))
+            )) {
                 closeBookingModal();
                 openThankYouModal();
             }
             
-            if (data.type === "redirect_to_payment") { 
+            if (data && data.type === "redirect_to_payment" && data.url) { 
                 window.location.href = data.url; 
             } 
         });
@@ -669,6 +694,7 @@
             }
         };
 
+        
         function setLanguage(lang) {
             ['hu', 'en', 'de'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
